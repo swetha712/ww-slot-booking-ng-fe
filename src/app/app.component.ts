@@ -1,18 +1,13 @@
 import { Component } from '@angular/core';
+import { SidenavComponent } from './sidenav/sidenav.component';
 import { RouterOutlet } from '@angular/router';
-import {MatButtonModule} from '@angular/material/button'
-import { NgStyle } from '@angular/common';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,MatButtonModule,NgStyle],
+  imports: [SidenavComponent,RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'ww-slot-booking-app-fe';
-togglevar: boolean=false;
-toggle(){
-  this.togglevar=!this.togglevar;
-}
 }
