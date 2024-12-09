@@ -1,0 +1,193 @@
+/* General Styles */
+body, html {
+  margin: 0;
+  height: 100%;
+}
+
+input,
+button {
+  border: none;
+}
+
+input:focus {
+  outline: none;
+  border-color: #fff;
+  transition: all 0.2s ease;
+}
+
+button:focus {
+  outline: none;
+}
+
+.input-line {
+  background: none;
+  margin-bottom: 10px;
+  line-height: 2.4em;
+  color: #fff;
+  font-family: roboto, sans-serif;
+  font-weight: 300;
+  font-size: 19px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.mobile-otp {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .input-line {
+    flex: 1;
+  }
+
+  .otp-btn {
+    cursor: pointer;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 25px;
+    color: rgba(255, 255, 255, 0.65);
+    padding: 0.5em 1.5em;
+    font-size: 16px;
+    font-family: roboto, sans-serif;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      transition: all 0.2s ease;
+    }
+  }
+}
+
+/* Buttons */
+.ghost-round {
+  cursor: pointer;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 25px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 19px;
+  font-weight: 300;
+  line-height: 2.5em;
+  margin-top: auto;
+  margin-bottom: 25px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+  }
+}
+
+/* Highlighted links */
+.highlight {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
+  cursor: pointer;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+/* Spacing for sign-in link */
+.spacing {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+.spacing .highlight {
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Container and layout styles */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eee;
+  height: 100%;
+}
+
+.window {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 15px 50px 10px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  height: auto;
+  width: 360px;
+  background: url('https://pexels.imgix.net/photos/27718/pexels-photo-27718.jpg?fit=crop&w=1280&h=823') top left no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+
+.overlay {
+  background: linear-gradient(#8ca6db, #b993d6);
+  opacity: 0.85;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+/* Content Styling */
+.content {
+  padding-left: 25px;
+  padding-right: 25px;
+  display: flex;
+  flex-direction: column;
+  z-index: 5;
+  position: relative;
+}
+
+.welcome {
+  font-weight: 200;
+  margin-top: 75px;
+  text-align: center;
+  font-size: 40px;
+  letter-spacing: 0.05rem;
+}
+
+.subtitle {
+  text-align: center;
+  line-height: 1em;
+  font-weight: 100;
+  font-size: 1.2rem;
+  letter-spacing: 0.02rem;
+}
+
+.input-fields {
+  margin-top: 25px;
+}
+
+/* Bold line background */
+.bold-line {
+  background: #e7e7e7;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  height: 360px;
+  z-index: 1;
+  opacity: 0.1;
+  background: url('https://pexels.imgix.net/photos/27718/pexels-photo-27718.jpg?fit=crop&w=1280&h=823') left no-repeat;
+  background-size: cover;
+}
+
+/* Additional Styling for Responsiveness */
+@media (max-width: 500px) {
+  .window {
+    width: 100%;
+    height: 100%;
+  }
+  .overlay {
+    width: 100%;
+    height: 100%;
+  }
+}

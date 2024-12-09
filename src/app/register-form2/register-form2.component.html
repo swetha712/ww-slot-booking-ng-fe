@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Registration Form</title>
+</head>
+<body>
+  <div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
+  <form>
+    <h3>Register Here</h3>
+
+    <label for="name">Full Name</label>
+    <input type="text" placeholder="Enter your name" id="name">
+
+    <label for="mobile">Mobile Number</label>
+    <div class="mobile-group">
+      <input type="text" placeholder="Mobile number" id="mobile">
+      <button type="button" class="send-otp">Send OTP</button>
+    </div>
+
+    <div class="send-otp">
+      <label for="otp">Enter OTP</label>
+      <input type="text" placeholder="Enter OTP" id="otp">
+    </div>
+    
+
+    <label for="email">Email</label>
+    <input type="email" placeholder="Enter your email" id="email">
+
+    <label for="password">Password</label>
+    <input type="password" placeholder="Enter your password" id="password">
+
+    <label for="confirm-password">Confirm Password</label>
+    <input type="password" placeholder="Confirm your password" id="confirm-password">
+
+    <button type="submit">Register</button>
+
+    <div class="redirect-login">
+      Already have an account? <a href="/login">Sign In</a>
+    </div>
+  </form>
+</body>
+</html>

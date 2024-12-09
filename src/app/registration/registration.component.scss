@@ -1,0 +1,83 @@
+// Variables for colors
+$green: #3bf910;
+$dark-green: #dddd35;
+$white: #ffffff;
+$red: #e74c3c;
+
+// Styles
+.registration-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: $green;
+  border-radius: 8px;
+  color: $white;
+  font-family: Arial, sans-serif;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .form-field {
+    margin-bottom: 15px;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      box-sizing: border-box;
+      outline: none;
+
+      &:focus {
+        border: 1px solid $dark-green;
+      }
+    }
+
+    small {
+      color: $red;
+      font-size: 12px;
+    }
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: $dark-green;
+    color: $white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+
+    &:disabled {
+      background-color: darken($green, 10%);
+      cursor: not-allowed;
+    }
+
+    &:hover:not(:disabled) {
+      background-color: lighten($dark-green, 10%);
+    }
+  }
+
+  .signin-prompt {
+    text-align: center;
+    margin-top: 15px;
+
+    a {
+      color: $white;
+      text-decoration: underline;
+      cursor: pointer;
+
+      &:hover {
+        color: lighten($white, 10%);
+      }
+    }
+  }
+}

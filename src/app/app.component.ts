@@ -2,8 +2,7 @@
 import { Component, inject, Renderer2, RendererFactory2 } from '@angular/core';
 import { ThemeService } from './theme.service';
 import { DOCUMENT } from '@angular/common';
-import { SidenavComponent } from './sidenav/sidenav.component';
-import { RouterOutlet } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
