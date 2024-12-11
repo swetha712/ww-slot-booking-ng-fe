@@ -1,10 +1,17 @@
+
+
+
+
+
+
+
 // Variables for colors
 $green: #3bf910;
-$dark-green: #dddd35;
+$dark-green: rgb(251, 251, 12);
 $white: #ffffff;
 $red: #e74c3c;
 
-// Styles
+// Styles for the registration container
 .registration-container {
   max-width: 400px;
   margin: 0 auto;
@@ -78,6 +85,93 @@ $red: #e74c3c;
       &:hover {
         color: lighten($white, 10%);
       }
+    }
+  }
+
+  // Inline field styles for phone and email with buttons
+  .phone-field,
+  .email-field {
+    .phone-input-container,
+    .email-input-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      input {
+        flex: 1; // Allow input to take the available space
+      }
+
+      button {
+        background-color: $dark-green;
+        color: $white;
+        padding: 6px 10px; // Adjust padding for smaller size
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: auto; // Ensure it only takes required space
+        min-width: 80px; // Set minimum width for consistency
+        text-align: center;
+
+        &:disabled {
+          background-color: darken($green, 10%);
+          cursor: not-allowed;
+        }
+
+        &:hover:not(:disabled) {
+          background-color: lighten($dark-green, 10%);
+        }
+      }
+    }
+  }
+
+  // Inline field styles for OTP input and Verify button
+  .otp-input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    input {
+      flex: 1; // Make the input take available space
+    }
+
+    button {
+      background-color: $dark-green;
+      color: $white;
+      padding: 6px 10px; // Compact button size
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: auto;
+      min-width: 80px; // Set consistent width for Verify button
+
+      &:disabled {
+        background-color: darken($green, 10%);
+        cursor: not-allowed;
+      }
+
+      &:hover:not(:disabled) {
+        background-color: lighten($dark-green, 10%);
+      }
+    }
+  }
+}
+
+// Responsive styles for small screens
+@media (max-width: 768px) {
+  .registration-container {
+    padding: 15px;
+
+    h2 {
+      font-size: 18px;
+    }
+
+    .form-field label {
+      font-size: 14px;
+    }
+
+    .form-field input,
+    button {
+      font-size: 14px;
     }
   }
 }
