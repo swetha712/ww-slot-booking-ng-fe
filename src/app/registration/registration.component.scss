@@ -1,16 +1,12 @@
-
-
-
-
-
-
-
 // Variables for colors
-$green: #3bf910;
-$dark-green: rgb(251, 251, 12);
+$green: #198754;
+$dark-green: #ffc107;
 $white: #ffffff;
-$red: #e74c3c;
+$red: #ffc107;
 
+::placeholder{
+  font-size: 14px;
+}
 // Styles for the registration container
 .registration-container {
   max-width: 400px;
@@ -38,12 +34,13 @@ $red: #e74c3c;
       width: 100%;
       padding: 10px;
       border: none;
-      border-radius: 4px;
+      // border-radius: 4px;
       box-sizing: border-box;
       outline: none;
+      border: 2px solid transparent;
 
       &:focus {
-        border: 1px solid $dark-green;
+        border: 2px solid $dark-green;
       }
     }
 
@@ -61,7 +58,7 @@ $red: #e74c3c;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
 
     &:disabled {
       background-color: darken($green, 10%);
@@ -91,6 +88,7 @@ $red: #e74c3c;
   // Inline field styles for phone and email with buttons
   .phone-field,
   .email-field {
+
     .phone-input-container,
     .email-input-container {
       display: flex;
@@ -104,7 +102,7 @@ $red: #e74c3c;
       button {
         background-color: $dark-green;
         color: $white;
-        padding: 6px 10px; // Adjust padding for smaller size
+        padding:10px; // Adjust padding for smaller size
         border: none;
         border-radius: 4px;
         cursor: pointer;
