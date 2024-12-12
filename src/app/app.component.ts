@@ -5,12 +5,16 @@ import { ThemeConflictService } from '../services/theme-conflict.service';
 import { DOCUMENT } from '@angular/common';
 import { HeaderComponent } from "./header/header.component";
 import { Apiservice } from '../services/apiservice.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent],
+  imports: [HeaderComponent,CommonModule,HttpClientModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  providers: [Apiservice]
+  
 })
 export class AppComponent implements OnInit {
     themes: any[] = [];
@@ -18,7 +22,7 @@ export class AppComponent implements OnInit {
     selectedTheme: string = '';
     selectedFont: string = '';
     currentFont: string = ''; 
-    user!:[];// Tracks the currently applied font
+    user!:any;// Tracks the currently applied font
   
     constructor(
       private themeService: ThemeService,
@@ -39,6 +43,7 @@ export class AppComponent implements OnInit {
       }
     this.apiservice.getuser().subscribe((data:any)=>{
 this.user=data;
+console.log(data);
     })
     }
   
