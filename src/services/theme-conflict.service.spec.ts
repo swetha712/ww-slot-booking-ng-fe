@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ThemeConflictService } from './theme-conflict.service';
+import { ThemeConflictService } from '../services/theme-conflict.service';
 
 describe('ThemeConflictService', () => {
   let service: ThemeConflictService;

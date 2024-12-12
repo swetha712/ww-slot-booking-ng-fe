@@ -1,9 +1,10 @@
 // app.component.ts
 import { Component, inject, OnInit, Renderer2, RendererFactory2 } from '@angular/core';
-import { ThemeService } from './theme.service';
-import { ThemeConflictService } from './theme-conflict.service';
+import { ThemeService } from '../services/theme.service';
+import { ThemeConflictService } from '../services/theme-conflict.service';
 import { DOCUMENT } from '@angular/common';
 import { HeaderComponent } from "./header/header.component";
+import { Apiservice } from '../services/apiservice.service';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -16,11 +17,13 @@ export class AppComponent implements OnInit {
     fonts: string[] = [];
     selectedTheme: string = '';
     selectedFont: string = '';
-    currentFont: string = ''; // Tracks the currently applied font
+    currentFont: string = ''; 
+    user!:[];// Tracks the currently applied font
   
     constructor(
       private themeService: ThemeService,
-      private themeConflictService: ThemeConflictService
+      private themeConflictService: ThemeConflictService,
+      private apiservice:Apiservice
     ) {}
   
     ngOnInit() {
@@ -34,6 +37,9 @@ export class AppComponent implements OnInit {
         this.themeService.switchTheme(this.selectedTheme);
         this.themeService.switchFont(this.selectedFont);
       }
+    this.apiservice.getuser().subscribe((data:any)=>{
+this.user=data;
+    })
     }
   
     onThemeChange(event: any) {
@@ -78,6 +84,8 @@ export class AppComponent implements OnInit {
       this.selectedFont = this.fonts[nextIndex];
       this.currentFont = this.selectedFont;
       this.themeService.switchFont(this.selectedFont);
+
     }
+
   }
   

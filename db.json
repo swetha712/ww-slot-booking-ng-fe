@@ -1,0 +1,25 @@
+{
+    "userinfo":[
+        {
+            "id":1,
+"username":"Klaus",
+"password":"klaus@123",
+"mobile":7010879782,
+"email":"klaus@gmail.com"
+        },
+        {
+            "id":2,
+"username":"damon",
+"password":"damon@123",
+"mobile":7010876793,
+"email":"damon@gmail.com"
+        },
+        {
+            "id":3,
+"username":"severus",
+"password":"severus@123",
+"mobile":7010834782,
+"email":"severus@gmail.com"
+        }
+    ]
+}
