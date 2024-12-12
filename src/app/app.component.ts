@@ -17,6 +17,9 @@ import { CommonModule } from '@angular/common';
   
 })
 export class AppComponent implements OnInit {
+    title(title: any) {
+      throw new Error('Method not implemented.');
+    }
     themes: any[] = [];
     fonts: string[] = [];
     selectedTheme: string = '';
