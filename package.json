@@ -23,6 +23,8 @@
     "@capacitor/android": "^6.2.0",
     "@capacitor/angular": "^2.0.3",
     "@capacitor/core": "latest",
+    "@ngx-translate/core": "^16.0.3",
+    "@ngx-translate/http-loader": "^16.0.0",
     "bootstrap": "^5.3.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
