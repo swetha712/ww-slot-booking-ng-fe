@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { RegistrationService } from '../service/registration-service';
 
 @Component({
   selector: 'app-registration',
@@ -15,13 +16,15 @@ export class RegistrationComponent {
   emailOtpSent: boolean = false;
   phoneOtpSent: boolean = false;
   isPhoneVerified: boolean = false;
-  isEmailVerified: boolean = false; // Track email verification status
+  isEmailVerified: boolean = false;
   phoneOtpValid: boolean = false;
-  emailOtpValid: boolean = false; // Track email OTP validity
-  phoneOtpEntered: boolean = false;
-  emailOtpEntered: boolean = false; // Track email OTP entry
+  emailOtpValid: boolean = false;
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private registrationService:RegistrationService
+  ) {
     this.registrationForm = this.fb.group({
       name: ['', Validators.required],
       phone: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
@@ -33,69 +36,102 @@ export class RegistrationComponent {
     }, { validators: this.passwordMatchValidator });
   }
 
-  // Custom Validator to check if passwords match
+  
+  // Custom Validator
   passwordMatchValidator(formGroup: FormGroup) {
     const password = formGroup.get('password')?.value;
     const confirmPassword = formGroup.get('confirmPassword')?.value;
     return password === confirmPassword ? null : { passwordMismatch: true };
   }
 
-  // Function to send OTP to Email
-  sendEmailOtp() {
-    if (this.registrationForm.get('email')?.valid) {
-      console.log('Sending OTP to email:', this.registrationForm.get('email')?.value);
-      this.emailOtpSent = true;
-      this.registrationForm.get('emailOtp')?.setValidators(Validators.required);
-      this.registrationForm.get('emailOtp')?.updateValueAndValidity();
-    }
-  }
-
-  // Function to send OTP to Phone
+  // Send OTP to Phone
   sendPhoneOtp() {
     if (this.registrationForm.get('phone')?.valid) {
-      console.log('Sending OTP to phone:', this.registrationForm.get('phone')?.value);
-      this.phoneOtpSent = true;
-      this.registrationForm.get('phoneOtp')?.setValidators(Validators.required);
-      this.registrationForm.get('phoneOtp')?.updateValueAndValidity();
+      const phone = this.registrationForm.get('phone')?.value;
+      this.registrationService.sendPhoneOtp(phone).subscribe({
+        next: () => {
+          this.phoneOtpSent = true;
+          this.registrationForm.get('phoneOtp')?.setValidators(Validators.required);
+          this.registrationForm.get('phoneOtp')?.updateValueAndValidity();
+          console.log('OTP sent to phone successfully');
+        },
+        error: (err) => console.error('Error sending phone OTP:', err)
+      });
     }
   }
 
-  // Function to verify Phone OTP
+  // Verify Phone OTP
   verifyPhoneOtp() {
-    this.phoneOtpEntered = true;
-    const enteredOtp = this.registrationForm.get('phoneOtp')?.value;
-    if (enteredOtp === '123456') { // Simulate OTP validation
-      this.isPhoneVerified = true;
-      this.phoneOtpValid = true;
-    } else {
-      this.isPhoneVerified = false;
-      this.phoneOtpValid = false;
+    const phone = this.registrationForm.get('phone')?.value;
+    const otp = this.registrationForm.get('phoneOtp')?.value;
+    this.registrationService.verifyPhoneOtp(phone, otp).subscribe({
+      next: () => {
+        this.isPhoneVerified = true;
+        this.phoneOtpValid = true;
+        console.log('Phone verified successfully');
+      },
+      error: (err) => {
+        this.isPhoneVerified = false;
+        this.phoneOtpValid = false;
+        console.error('Invalid phone OTP:', err);
+      }
+    });
+  }
+
+  // Send OTP to Email
+  sendEmailOtp() {
+    if (this.registrationForm.get('email')?.valid) {
+      const email = this.registrationForm.get('email')?.value;
+      this.registrationService.sendEmailOtp(email).subscribe({
+        next: () => {
+          this.emailOtpSent = true;
+          this.registrationForm.get('emailOtp')?.setValidators(Validators.required);
+          this.registrationForm.get('emailOtp')?.updateValueAndValidity();
+          console.log('OTP sent to email successfully');
+        },
+        error: (err) => console.error('Error sending email OTP:', err)
+      });
     }
   }
 
-  // Function to verify Email OTP
+  // Verify Email OTP
   verifyEmailOtp() {
-    this.emailOtpEntered = true;
-    const enteredOtp = this.registrationForm.get('emailOtp')?.value;
-    if (enteredOtp === '654321') { // Simulate OTP validation for email
-      this.isEmailVerified = true;
-      this.emailOtpValid = true;
-    } else {
-      this.isEmailVerified = false;
-      this.emailOtpValid = false;
-    }
+    const email = this.registrationForm.get('email')?.value;
+    const otp = this.registrationForm.get('emailOtp')?.value;
+    this.registrationService.verifyEmailOtp(email, otp).subscribe({
+      next: () => {
+        this.isEmailVerified = true;
+        this.emailOtpValid = true;
+        console.log('Email verified successfully');
+      },
+      error: (err) => {
+        this.isEmailVerified = false;
+        this.emailOtpValid = false;
+        console.error('Invalid email OTP:', err);
+      }
+    });
   }
 
-  // Submit the form after validation
+  // Register User
   onSubmit() {
     if (this.registrationForm.valid && this.isPhoneVerified && this.isEmailVerified) {
-      console.log('Form Submitted:', this.registrationForm.value);
+      const userData = { ...this.registrationForm.value };
+      delete userData.phoneOtp;
+      delete userData.emailOtp;
+
+      this.registrationService.registerUser(userData).subscribe({
+        next: (response) => {
+          console.log('User registered successfully:', response);
+          this.router.navigate(['/login']); // Navigate to login
+        },
+        error: (err) => console.error('Registration failed:', err)
+      });
     } else {
-      console.log('Please verify your phone number and email before submitting.');
+      console.log('Please complete all verifications and validations.');
     }
   }
 
-  // Navigate to the Login page
+  // Navigate to Login
   navigateToLogin() {
     this.router.navigate(['/login']);
   }

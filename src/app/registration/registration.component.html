@@ -26,7 +26,7 @@
         <input id="phoneOtp" type="text" formControlName="phoneOtp" placeholder="Enter the OTP" />
         <button type="button" (click)="verifyPhoneOtp()">Verify</button>
       </div>
-      <small *ngIf="!isPhoneVerified && phoneOtpEntered && !phoneOtpValid">Invalid OTP entered.</small>
+      <small *ngIf="!isPhoneVerified && phoneOtpSent && !phoneOtpValid">Invalid OTP entered.</small>
       <small *ngIf="isPhoneVerified">Verified successfully.</small>
     </div>
 
@@ -47,7 +47,7 @@
         <input id="emailOtp" type="text" formControlName="emailOtp" placeholder="Enter the OTP" />
         <button type="button" (click)="verifyEmailOtp()">Verify</button>
       </div>
-      <small *ngIf="!isEmailVerified && emailOtpEntered && !emailOtpValid">Invalid OTP entered.</small>
+      <small *ngIf="!isEmailVerified && emailOtpSent && !emailOtpValid">Invalid OTP entered.</small>
       <small *ngIf="isEmailVerified">Verified successfully.</small>
     </div>
 
