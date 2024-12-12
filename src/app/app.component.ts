@@ -1,8 +1,7 @@
 // app.component.ts
-import { Component, inject, OnInit, Renderer2, RendererFactory2 } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { ThemeService } from '../services/theme.service';
 import { ThemeConflictService } from '../services/theme-conflict.service';
-import { DOCUMENT } from '@angular/common';
 import { HeaderComponent } from "./header/header.component";
 import { Apiservice } from '../services/apiservice.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -10,7 +9,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent,CommonModule,HttpClientModule],
+  imports: [HeaderComponent,CommonModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   providers: [Apiservice]
