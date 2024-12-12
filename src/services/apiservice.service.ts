@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 )
 
 export class Apiservice {
-private apiUrl ='http://localhost:3000/userinfo'
+private apiUrl ='http://localhost:3000/turfdetails'
   constructor(private http:HttpClient) {}
   getuser():Observable<any>{
     return this.http.get<any>(this.apiUrl);
