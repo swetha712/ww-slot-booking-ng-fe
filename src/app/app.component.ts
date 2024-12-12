@@ -3,13 +3,11 @@ import { Component, inject, OnInit, Renderer2, RendererFactory2 } from '@angular
 import { ThemeService } from './theme.service';
 import { ThemeConflictService } from './theme-conflict.service';
 import { DOCUMENT } from '@angular/common';
-import { SidenavComponent } from './sidenav/sidenav.component';
-import { RouterOutlet } from '@angular/router';
-
+import { HeaderComponent } from "./header/header.component";
 @Component({
   selector: 'app-root',
   standalone: true,
-  //imports:[SidenavComponent,RouterOutlet],
+  imports: [HeaderComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
