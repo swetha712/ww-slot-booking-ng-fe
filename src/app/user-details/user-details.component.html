@@ -1,0 +1,39 @@
+<div class="edit-profile-container">
+    <h2>Edit Profile</h2>
+    <form [formGroup]="editForm" (ngSubmit)="saveUser()">
+      <div class="form-field">
+        <label for="username">Username:</label>
+        <input id="username" formControlName="username" type="text" />
+        <div *ngIf="editForm.get('username')?.invalid && editForm.get('username')?.touched">
+          <small>Username is required.</small>
+        </div>
+      </div>
+  
+      <div class="form-field">
+        <label for="password">Password:</label>
+        <input id="password" formControlName="password" type="password" />
+        <div *ngIf="editForm.get('password')?.invalid && editForm.get('password')?.touched">
+          <small>Password must be at least 6 characters long.</small>
+        </div>
+      </div>
+  
+      <div class="form-field">
+        <label for="email">Email:</label>
+        <input id="email" formControlName="email" type="email" />
+        <div *ngIf="editForm.get('email')?.invalid && editForm.get('email')?.touched">
+          <small>Enter a valid email address.</small>
+        </div>
+      </div>
+  
+      <div class="form-field">
+        <label for="mobile">Mobile:</label>
+        <input id="mobile" formControlName="mobile" type="text" />
+        <div *ngIf="editForm.get('mobile')?.invalid && editForm.get('mobile')?.touched">
+          <small>Mobile number must be 10 digits.</small>
+        </div>
+      </div>
+  
+      <button type="submit" [disabled]="editForm.invalid">Save</button>
+    </form>
+  </div>
+  
