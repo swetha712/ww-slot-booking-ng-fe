@@ -1,0 +1,78 @@
+.user-auth {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url("https://www.google.com/search?q=turf+image&oq=turf+image&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQABiABDIHCAIQABiABDIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIICAYQABgWGB4yCAgHEAAYFhgeMggICBAAGBYYHjIICAkQABgWGB7SAQk0Nzk0ajBqMTWoAgiwAgE&sourceid=chrome&ie=UTF-8#vhid=sBGcT7-K8Q1j2M&vssid=l");
+    .sign-up, .login {
+      text-align: center;
+      padding:15px;
+      width: 100%;
+      max-width: 400px;
+      margin: 20px auto;
+      background: rgba(94, 94, 94, 0.492);
+box-shadow: 0 8px 32px  rgba(0, 0, 0, 0.67);
+backdrop-filter: blur( 300px );
+-webkit-backdrop-filter: blur( 300px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+  
+      h1 {
+        
+        font-size: 50px;
+        color: #ffffff;
+      }
+  
+      .common-form {
+        display: flex;
+        flex-direction: column;
+  
+        mat-form-field {
+          margin-bottom: 10px; 
+          width: 100%; 
+        }
+  
+        input {
+          transition: border-color 0.3s;
+  
+          &:focus {
+            border-color: #3f51b5;
+          }
+        }
+  
+        .form-button {
+          margin-top: 20px;
+        }
+  
+        .auth-toggle-link {
+          display: block;
+          text-align: center;
+          margin-top: 15px;
+          color: #3f51b5;
+          cursor: pointer;
+  
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+  
+      .Error-p {
+        color: red;
+        font-size: 14px;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+    }
+  }
+
+  .user-auth{
+    background-image: url('https://t3.ftcdn.net/jpg/06/84/33/54/360_F_684335404_8gi7eRehGnUHddPOEjOvfq6lbwE7piHW.jpg');
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+ 
+  }
+  

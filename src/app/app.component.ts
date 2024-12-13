@@ -4,10 +4,14 @@ import { ThemeService } from '../services/theme.service';
 import { ThemeConflictService } from '../services/theme-conflict.service';
 import { HeaderComponent } from "./header/header.component";
 import { Apiservice } from '../services/apiservice.service';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { UserAuthComponent } from "./user-auth/user-auth.component";
+import { Router, RouterModule, RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent],
+  imports: [HeaderComponent, CommonModule, UserAuthComponent,RouterOutlet,RouterModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

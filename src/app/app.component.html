@@ -1,6 +1,7 @@
 <!--<app-sidenav></app-sidenav>
 
 <router-outlet></router-outlet>--><app-header></app-header>
+<app-user-auth></app-user-auth>
 <!-- app.component.html -->
 
 <div>
@@ -18,7 +19,7 @@
 </div>
 
 <div>
-  
+
   <label for="font-select">Choose Font:</label>
   <select id="font-select" (change)="onFontChange($event)">
     <option value="Cormorant Garamond">Cormorant Garamond</option>
@@ -26,11 +27,11 @@
     <option value="Yuji Mai">Yuji Mai</option>
     <option value="Outfit">outfit</option>
     <option value="Ubuntu">ubuntu</option>
-  
+
     <option value="Suravaram">suravaram</option>
 
   </select>
-  
+
 </div>
 
 <hr />
@@ -67,15 +68,15 @@
   <div class="danger" [style.fontFamily]="currentFont">
     This is a danger alert
   </div>
-  
+
   <h1>Custom Theme with Text-Specific Colors</h1>
   <button class="primary">Primary Button</button>
   <button class="secondary">Secondary Button</button>
 
 
-    <div class="success">This is a success alert</div>
-    <div class="warn">This is a warning alert</div>
-    <div class="danger">This is a danger alert</div>
+  <div class="success">This is a success alert</div>
+  <div class="warn">This is a warning alert</div>
+  <div class="danger">This is a danger alert</div>
 
   <div class="text-color">Normal Color</div>
   <div class="primary">Primary Text</div>
@@ -94,10 +95,11 @@
 </div>
 
 <div *NgFor="let users of user">
-<div>{{users.username}}</div>
-<div>{{users.mobile}}</div>
-<div>{{users.email}}</div>
-<div>{{users.password}}</div>
-<div>{{users.id}}</div>
+  <div>{{users.username}}</div>
+  <div>{{users.mobile}}</div>
+  <div>{{users.email}}</div>
+  <div>{{users.password}}</div>
+  <div>{{users.id}}</div>
 
 </div>
+<router-outlet></router-outlet>
