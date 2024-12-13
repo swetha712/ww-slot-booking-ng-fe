@@ -4,24 +4,25 @@ import { ThemeService } from '../services/theme.service';
 import { ThemeConflictService } from '../services/theme-conflict.service';
 import { HeaderComponent } from "./header/header.component";
 import { Apiservice } from '../services/apiservice.service';
-import { HttpClientModule } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
-import { UserAuthComponent } from "./user-auth/user-auth.component";
-import { Router, RouterModule, RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent, CommonModule, UserAuthComponent,RouterOutlet,RouterModule],
+  imports: [HeaderComponent, CommonModule, UserAuthComponent,RouterOutlet,RouterModule,CommonModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  providers: [Apiservice]
+  
 })
 export class AppComponent implements OnInit {
+    title(title: any) {
+      throw new Error('Method not implemented.');
+    }
     themes: any[] = [];
     fonts: string[] = [];
     selectedTheme: string = '';
     selectedFont: string = '';
     currentFont: string = ''; 
-    user!:[];// Tracks the currently applied font
+    user!:any;// Tracks the currently applied font
   
     constructor(
       private themeService: ThemeService,
@@ -42,6 +43,7 @@ export class AppComponent implements OnInit {
       }
     this.apiservice.getuser().subscribe((data:any)=>{
 this.user=data;
+console.log(data);
     })
     }
   

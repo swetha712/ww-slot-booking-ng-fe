@@ -12,5 +12,7 @@ bootstrapApplication(UserAuthComponent, {
     provideAnimations(),// Enables animations
     provideRouter(routes),
     provideHttpClient()
+    provideRouter(routes),
+    provideHttpClient()
   ],
 }).catch(err => console.error(err));
