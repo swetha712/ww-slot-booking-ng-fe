@@ -1,0 +1,67 @@
+{
+  "userinfo": [
+    {
+      "id": "1",
+      "username": "Klaus",
+      "password": "klaus@123",
+      "mobile": 7010879782,
+      "email": "klaus@gmail.com"
+    },
+    {
+      "id": "2",
+      "username": "damon",
+      "password": "damon@123",
+      "mobile": 7010876793,
+      "email": "damon@gmail.com"
+    },
+    {
+      "id": "3",
+      "username": "severus",
+      "password": "severus@123",
+      "mobile": 7010834782,
+      "email": "severus@gmail.com"
+    },
+    {
+      "id": "e5df",
+      "username": "Kladhasjkdus",
+      "password": "klaasdasdus@123",
+      "mobile": 70142349782,
+      "email": "kladfsdfdsus@gmail.com"
+    },
+    {
+      "id": "ceed",
+      "name": "keerthivasan",
+      "Email": "keerthivasan@gmail.com",
+      "phone": 12379821731,
+      "password": "keerthi"
+    },
+    {
+      "id": "810a",
+      "name": "",
+      "Email": "",
+      "phone": "",
+      "password": ""
+    },
+    {
+      "id": "71a6",
+      "name": "keerthivasan",
+      "Email": "keerthivasan@gmail.com",
+      "phone": 1232312123,
+      "password": "keerthi@24"
+    },
+    {
+      "id": "f519",
+      "name": "",
+      "Email": "",
+      "phone": "",
+      "password": ""
+    },
+    {
+      "id": "3c47",
+      "name": "keerthivasan",
+      "Email": "Keertji@gmail.com",
+      "phone": 34234234234,
+      "password": "1234"
+    }
+  ]
+}

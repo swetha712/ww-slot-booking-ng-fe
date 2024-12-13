@@ -1,11 +1,10 @@
-
 <!--<app-sidenav></app-sidenav>
 
-<router-outlet></router-outlet>-->
-
+<router-outlet></router-outlet>--><app-header></app-header>
+<app-user-auth></app-user-auth>
 <!-- app.component.html -->
-<button (click)="changePrimary()">Change Primary</button>
-<div class="dynamic-primary">
+
+<div>
   <label for="theme-select">Choose Theme:</label>
   <select id="theme-select" (change)="onThemeChange($event)">
     <option value="theme-set-1">Theme 1</option>
@@ -18,29 +17,91 @@
     <option value="theme-set-8">Theme 8</option>
   </select>
 </div>
-<div class="container p-4">
-  <h1>Custom Theme with Text-Specific Colors</h1>
 
+<div>
+
+  <label for="font-select">Choose Font:</label>
+  <select id="font-select" (change)="onFontChange($event)">
+    <option value="Cormorant Garamond">Cormorant Garamond</option>
+    <option value="Play">Play</option>
+    <option value="Yuji Mai">Yuji Mai</option>
+    <option value="Outfit">outfit</option>
+    <option value="Ubuntu">ubuntu</option>
+
+    <option value="Suravaram">suravaram</option>
+
+  </select>
+
+</div>
+
+<hr />
+
+
+<div>
+  <p>
+    <strong>Current Theme:</strong> {{ selectedTheme }}
+  </p>
+  <p>
+    <strong>Current Font:</strong> {{ currentFont }}
+  </p>
+</div>
+
+<hr />
+
+<!-- Sample content styled with the current theme and font -->
+<div class="container">
+  <h1 [style.fontFamily]="currentFont">
+    Welcome to Theme and Font Toggling
+  </h1>
+  <p [style.fontFamily]="currentFont">
+    This is a sample text demonstrating the font "{{ currentFont }}" and the selected theme.
+  </p>
+  <button class="primary" [style.fontFamily]="currentFont">Primary Button</button>
+  <button class="secondary" [style.fontFamily]="currentFont">Secondary Button</button>
+
+  <div class="success" [style.fontFamily]="currentFont">
+    This is a success alert
+  </div>
+  <div class="warn" [style.fontFamily]="currentFont">
+    This is a warning alert
+  </div>
+  <div class="danger" [style.fontFamily]="currentFont">
+    This is a danger alert
+  </div>
+
+  <h1>Custom Theme with Text-Specific Colors</h1>
   <button class="primary">Primary Button</button>
   <button class="secondary">Secondary Button</button>
+
 
   <div class="success">This is a success alert</div>
   <div class="warn">This is a warning alert</div>
   <div class="danger">This is a danger alert</div>
 
+  <div class="text-color">Normal Color</div>
+  <div class="primary">Primary Text</div>
+  <div class="secondary">Secondary Text</div>
+  <div class="success">
+    Success Background <span class="text">Success Text</span>
+  </div>
+  <div class="warn">
+    Warn Background <span class="text">Warn Text</span>
+  </div>
+  <div class="danger">
+    Danger Background <span class="text">Danger Text</span>
+  </div>
+
+  <button class="success"><span class="text">Success</span></button>
 </div>
 
-<div class="text-color">Normal color</div>
-<div class="primary">Primary Text</div>
-<div class="secondary">Secondary text</div>
-<div class="success">
-  Success Background <span class="text">Success Text</span>
+<div class="bg-primary mx-4" *ngFor="let users of user">
+  <div>{{users.id}}</div>
+  <div>{{users.turfname}}</div>
+  <div>{{users.location}}</div>
+  <div>{{users.ownername}}</div>
+  <div>{{users.description}}</div>
+  <div>{{users.courtcount}}</div>
+  <img src="{{users.image}}" width="300px" height="200px">
+  <hr>
 </div>
-<div class="warn">
-  Warn Background <span class="text">Warn Text</span>
-</div>
-<div class="danger">
-  Danger Background <span class="text">Danger Text</span>
-</div>
-
-<button class="success"><span class="text">Success</span></button>
+<router-outlet></router-outlet>
