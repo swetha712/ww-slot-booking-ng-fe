@@ -60,5 +60,12 @@
       "phone": 34234234234,
       "password": "1234"
     }
-  ]
+  ],
+  "logged-in": {
+    "username": "kreethi ",
+    "password": "klaus@123",
+    "email": "kreethi@gmail.com",
+    "mobile": 7010879782
+  }
+
 }

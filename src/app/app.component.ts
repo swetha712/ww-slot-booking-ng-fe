@@ -4,7 +4,7 @@ import { ThemeService } from '../services/theme.service';
 import { ThemeConflictService } from '../services/theme-conflict.service';
 import { HeaderComponent } from "./header/header.component";
 import { Apiservice } from '../services/apiservice.service';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { UserAuthComponent } from './user-auth/user-auth.component';
 import { CommonModule } from '@angular/common';
 import { TurfComponent } from './turf/turf.component';
@@ -27,11 +27,13 @@ export class AppComponent implements OnInit {
     selectedFont: string = '';
     currentFont: string = ''; 
     user!:any;// Tracks the currently applied font
-  
+    userId!: any|string;
+    
     constructor(
       private themeService: ThemeService,
       private themeConflictService: ThemeConflictService,
-      private apiservice:Apiservice
+      private apiservice:Apiservice,
+      private router: Router 
     ) {}
   
     ngOnInit() {
@@ -94,6 +96,9 @@ console.log(data);
       this.currentFont = this.selectedFont;
       this.themeService.switchFont(this.selectedFont);
 
+    }
+    goToUserDetails(id: string) {
+      this.router.navigate(['/user', id]);
     }
 
   }
