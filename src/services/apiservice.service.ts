@@ -8,6 +8,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 
 export class Apiservice {
 private apiUrl ='http://localhost:3000/userinfo';
+private turfUrl ='http://localhost:3000/turfdetails'
 private currentUserSubject = new BehaviorSubject<any>(null);
   constructor(private http:HttpClient) {}
 
