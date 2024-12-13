@@ -40,7 +40,7 @@ export class UserDetailsComponent {
 
   // Load the logged-in user data into the form
   loadUserData() {
-    this.apiService.getLoggedInUser().subscribe((data) => {
+    this.apiService.getLoggedInUser().subscribe((data: any) => {
       this.user = data;
       this.editForm.patchValue(this.user); // Patch the values into the form
     });
