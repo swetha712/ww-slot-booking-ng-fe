@@ -1,0 +1,109 @@
+.profile-container {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: auto;
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3px;
+}
+
+.profile-image-container {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #4caf50;
+    margin-bottom: 12px;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info {
+    text-align: center;
+}
+
+.profile-info h2 {
+    font-size: 1.6rem;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.profile-info p {
+    font-size: 1rem;
+    color: #757575;
+    margin-bottom: 10px;
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.action-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    color: #080101;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.action-btn span.material-icons {
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+.edit-btn {
+    background-color: #4caf50;
+    font-weight: bold;
+}
+
+
+
+.logout-btn {
+    background-color: #f44336;
+}
+
+
+
+.profile-actions button {
+    background-color: #007bff;
+}
+
+
+
+@media screen and (max-width: 480px) {
+    .profile-info h2 {
+        font-size: 1.4rem;
+    }
+
+    .profile-info p {
+        font-size: 0.9rem;
+    }
+
+    .action-btn {
+        font-size: 0.9rem;
+        padding: 12px;
+    }
+}
