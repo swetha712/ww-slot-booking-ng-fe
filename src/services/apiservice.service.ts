@@ -7,6 +7,9 @@ import { Observable } from 'rxjs';
 )
 
 export class Apiservice {
+  get(arg0: string) {
+    throw new Error('Method not implemented.');
+  }
 private apiUrl ='http://localhost:3000/turfdetails'
   constructor(private http:HttpClient) {}
   getuser():Observable<any>{
