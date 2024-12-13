@@ -1,26 +1,35 @@
 // app.component.ts
-import { Component, inject, OnInit, Renderer2, RendererFactory2 } from '@angular/core';
-import { ThemeService } from './theme.service';
-import { ThemeConflictService } from './theme-conflict.service';
-import { DOCUMENT } from '@angular/common';
+import { Component,OnInit } from '@angular/core';
+import { ThemeService } from '../services/theme.service';
+import { ThemeConflictService } from '../services/theme-conflict.service';
 import { HeaderComponent } from "./header/header.component";
+import { Apiservice } from '../services/apiservice.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent],
+  imports: [HeaderComponent,CommonModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  providers: [Apiservice]
+  
 })
 export class AppComponent implements OnInit {
+    title(title: any) {
+      throw new Error('Method not implemented.');
+    }
     themes: any[] = [];
     fonts: string[] = [];
     selectedTheme: string = '';
     selectedFont: string = '';
-    currentFont: string = ''; // Tracks the currently applied font
+    currentFont: string = ''; 
+    user!:any;// Tracks the currently applied font
   
     constructor(
       private themeService: ThemeService,
-      private themeConflictService: ThemeConflictService
+      private themeConflictService: ThemeConflictService,
+      private apiservice:Apiservice
     ) {}
   
     ngOnInit() {
@@ -34,6 +43,10 @@ export class AppComponent implements OnInit {
         this.themeService.switchTheme(this.selectedTheme);
         this.themeService.switchFont(this.selectedFont);
       }
+    this.apiservice.getuser().subscribe((data:any)=>{
+this.user=data;
+console.log(data);
+    })
     }
   
     onThemeChange(event: any) {
@@ -78,6 +91,8 @@ export class AppComponent implements OnInit {
       this.selectedFont = this.fonts[nextIndex];
       this.currentFont = this.selectedFont;
       this.themeService.switchFont(this.selectedFont);
+
     }
+
   }
   

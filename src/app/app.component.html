@@ -93,3 +93,13 @@
   <button class="success"><span class="text">Success</span></button>
 </div>
 
+<div class="bg-primary mx-4" *ngFor="let users of user">
+<div>{{users.id}}</div>
+<div>{{users.turfname}}</div>
+<div>{{users.location}}</div>
+<div>{{users.ownername}}</div>
+<div>{{users.description}}</div>
+<div>{{users.courtcount}}</div>
+<img src="{{users.image}}" width="300px" height="200px">
+<hr>
+</div>
