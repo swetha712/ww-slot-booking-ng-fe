@@ -1,4 +1,5 @@
 <div class="profile-container">
+    <!-- Profile Header -->
     <div class="profile-header">
       <!-- Profile Image -->
       <div class="profile-image-container">
@@ -13,18 +14,16 @@
         <p>{{ user?.email }}</p>
       </div>
     </div>
-  <div class="edit">
-    <!-- Edit Button Positioned Below Username/Email -->
-    <button (click)="goToEditPage()" class="edit-btn">
-      <span class="material-icons">edit</span> Edit Profile
-    </button>
-</div>
   
-    <div class="profile-actions">
-      <button *ngFor="let action of profileActions">
+    <!-- Edit Button -->
+    <div class="action-buttons">
+      <button (click)="goToEditPage()" class="action-btn edit-btn">
+        <span class="material-icons">edit</span> Edit Profile
+      </button>
+      <button *ngFor="let action of profileActions" class="action-btn">
         <span class="material-icons">{{ action.icon }}</span> {{ action.name }}
       </button>
-      <button class="logout-btn" (click)="logout()">
+      <button class="action-btn logout-btn" (click)="logout()">
         <span class="material-icons">logout</span> Logout
       </button>
     </div>
