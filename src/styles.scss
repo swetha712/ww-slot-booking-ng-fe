@@ -1,1 +1,59 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  button.primary {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  button.secondary {
+    background-color: var(--secondary-color);
+    color: white;
+  }
+  
+  .success {
+    background-color: var(--success);
+    color: white;
+  }
+  
+  .warn {
+    background-color: var(--warn);
+    color: white;
+  }
+  
+  .danger {
+    background-color: var(--danger);
+    color: white;
+  }
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  button.primary {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  button.secondary {
+    background-color: var(--secondary-color);
+    color: white;
+  }
+  
+  .success {
+    background-color: var(--success);
+    color: var(--success-text);
+  }
+  
+  .warn {
+    background-color: var(--warn);
+    color: var(--warn-text);
+  }
+  
+  .danger {
+    background-color: var(--danger);
+    color: var(--danger-text);
+  }
+  

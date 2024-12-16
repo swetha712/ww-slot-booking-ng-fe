@@ -1,0 +1,110 @@
+/* General form styles */
+form {
+  width: 450px;
+  min-height: auto;
+  border-radius: 5px;
+  margin: 2% auto;
+  box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
+  padding: 2%;
+  background-image: linear-gradient(-225deg, #e3fdf5 50%, #ffe6fa 50%);
+}
+
+/* Field container to ensure even alignment */
+.field-set {
+  margin-top: 1em;
+
+  display: flex;
+  flex-direction: column; /* Stack fields vertically */
+  gap: 1em; /* Consistent spacing between fields */
+}
+
+/* Form input styles */
+.form-input {
+  width: 100%; /* Ensure all inputs stretch to form width */
+  padding: 15px;
+  font-size: 16px;
+  color: #5e6472;
+  border: none;
+  border-radius: 5px;
+  background: #fff;
+  outline: none;
+
+  &:focus {
+    border: 1px solid #b8f2e6;
+  }
+}
+
+/* Mobile number and OTP styles */
+.mobile-otp {
+  display: flex; /* Align input and button horizontally */
+  gap: 10px; /* Space between input and button */
+  width: 100%; /* Ensure it matches other field widths */
+
+  .form-input {
+    flex: 2; /* Take up most of the space */
+    padding: 15px; /* Match padding of other fields */
+  }
+
+  .otp-btn {
+    flex: 1; /* Ensure button aligns with input */
+    padding: 15px; /* Match input field height */
+    background-color: #b8f2e6;
+    border: none;
+    border-radius: 5px;
+    color: #333;
+    cursor: pointer;
+    font-size: 0.9rem;
+
+    &:hover {
+      background-color: #a0e3d4;
+    }
+  }
+}
+
+/* Header styles */
+header {
+  margin-bottom: 2em;
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    color: #3e403f;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: #888;
+  }
+}
+
+/* Submit button styles */
+button.log-in {
+  display: block;
+  width: 100%; /* Match width of other fields */
+  padding: 1em;
+  background: #b8f2e6;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #252537;
+  cursor: pointer;
+
+  &:hover {
+    background: #a0e3d4;
+  }
+}
+
+/* Link styles */
+.other {
+  margin-top: 1em;
+  text-align: center;
+
+  .sign-up {
+    color: #3e403f;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

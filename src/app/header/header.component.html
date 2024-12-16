@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span class="logo">TurfSlot</span>
+        <button mat-button>Place</button>
+        <button mat-button>Category</button>
+        <button mat-button>Choose</button>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>Profile</button>
+            <button mat-menu-item>Settings</button>
+            <button mat-menu-item>Logout</button>
+        </mat-menu>
+    </mat-toolbar-row>
+    <router-outlet></router-outlet>
+</mat-toolbar>

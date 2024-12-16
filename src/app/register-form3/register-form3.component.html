@@ -1,0 +1,45 @@
+<div class="pagewrap">
+  <form class="form" id="registration-form">
+    <h3 class="form__title">Register</h3>
+
+    <div class="container">
+      <input class="container__input" type="text" id="name" name="name" required>
+      <label for="name" class="container__label">Full Name</label>
+    </div>
+
+    <div class="container mobile-container">
+      <input class="container__input" type="text" id="mobile" name="mobile" required>
+      <label for="mobile" class="container__label">Mobile Number</label>
+    </div>
+
+    <div class="otp-container">
+      <button type="button" class="otp-btn">Send OTP</button>
+    </div>
+
+    <div class="container">
+      <input class="container__input" type="text" id="otp" name="otp" required>
+      <label for="otp" class="container__label">Enter OTP</label>
+    </div>
+
+    <div class="container">
+      <input class="container__input" type="email" id="email" name="email">
+      <label for="email" class="container__label">Email</label>
+    </div>
+
+    <div class="container">
+      <input class="container__input" type="password" id="password" name="password" required>
+      <label for="password" class="container__label">Password</label>
+    </div>
+
+    <div class="container">
+      <input class="container__input" type="password" id="confirm-password" name="confirm-password" required>
+      <label for="confirm-password" class="container__label">Confirm Password</label>
+    </div>
+
+    <button class="form__submit" id="submit" type="submit">Submit</button>
+
+    <div class="redirect-login">
+      Already have an account? <a href="/login">Sign In</a>
+    </div>
+  </form>
+</div>

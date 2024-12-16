@@ -1,0 +1,61 @@
+<div class="user-auth">
+
+
+    <!-- User Signup -->
+    @if(!showlogin){
+    <div class="sign-up">
+        <h1>User Signup</h1>
+        <form class="common-form" #userSignUp="ngForm" (ngSubmit)="signUp(userSignUp.value)">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Enter UserName</mat-label>
+                <input matInput type="text" placeholder="Name" name="name" ngModel>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Enter Email</mat-label>
+                <input matInput type="email" placeholder="Email" name="Email" ngModel>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Enter Phone Number</mat-label>
+                <input matInput type="number" placeholder="Email" name="phone" ngModel>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Enter Password</mat-label>
+                <input matInput type="password" placeholder="Password" name="password" ngModel>
+            </mat-form-field>
+
+
+
+            <button mat-raised-button color="primary" class="form-button" type="submit">Sign Up</button>
+            <a class="auth-toggle-link" (click)="openLogin()">Already have an Account? (Login Now)</a>
+        </form>
+    </div>
+    }
+
+
+    <!-- User Login -->
+    @else {
+    <div class="login">
+        <h1>User Login</h1>
+        <p class="Error-p mat-error">{{authError}}</p>
+        <form class="common-form" #userlogin="ngForm" (ngSubmit)="login(userlogin.value)">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Enter Email or Phone</mat-label>
+                <input matInput type="email" placeholder="Email" name="Email" ngModel>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Enter Password</mat-label>
+                <input matInput type="password" placeholder="Password" name="password" ngModel>
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" class="form-button" type="submit">Login</button>
+            <a class="auth-toggle-link" (click)="openSignup()">Don’t have an Account? (Sign Up)</a>
+        </form>
+    </div>
+    }
+
+
+</div>

@@ -1,0 +1,71 @@
+<div class="bold-line"></div>
+<div class="container">
+  <div class="window">
+    <div class="overlay"></div>
+    <div class="content">
+      <div class="welcome">Create Your Account</div>
+      <div class="subtitle">
+        We're almost done. Please fill in your details to register.
+      </div>
+
+      <!-- Registration Form -->
+      <div class="input-fields">
+        <!-- Name Input -->
+        <input type="text" placeholder="Full Name" class="input-line full-width" required />
+
+        <!-- Mobile Number with OTP -->
+        <div class="mobile-otp">
+          <input
+            type="text"
+            placeholder="Mobile Number"
+            class="input-line full-width"
+            required
+            pattern="^\d{10}$"
+          />
+          <button class="otp-btn">Send OTP</button>
+        </div>
+
+        <!-- OTP Input -->
+        <input
+          type="text"
+          placeholder="Enter OTP"
+          class="input-line full-width"
+          required
+        />
+
+        <!-- Email (Optional) -->
+        <input
+          type="email"
+          placeholder="Email (Optional)"
+          class="input-line full-width"
+        />
+
+        <!-- Password -->
+        <input
+          type="password"
+          placeholder="Password"
+          class="input-line full-width"
+          required
+        />
+
+        <!-- Confirm Password -->
+        <input
+          type="password"
+          placeholder="Confirm Password"
+          class="input-line full-width"
+          required
+        />
+      </div>
+
+      <!-- Register Button -->
+      <div>
+        <button class="ghost-round full-width">Create Account</button>
+      </div>
+
+      <!-- Sign In Link -->
+      <div class="spacing">
+        Already have an account? <a href="/login" class="highlight">Sign In Now</a>
+      </div>
+    </div>
+  </div>
+</div>
