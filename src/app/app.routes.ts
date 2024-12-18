@@ -6,13 +6,15 @@ import { TurfComponent } from './turf/turf.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
 import { Component } from '@angular/core';
 import { UserAuthComponent } from './user-auth/user-auth.component';
+import { CourtdetailsComponent } from './courtdetails/courtdetails.component';
 export const routes: Routes = [
     { path: '', redirectTo: '/profile', pathMatch: 'full' },
     { path: 'profile', component: UserProfileComponent },
     { path: 'edit-profile', component: UserDetailsComponent },
     {path:'turfdetails',component:TurfComponent},
     {path:'orderdetails',component:OrderDetailsComponent},
-    {path :'login',component:UserAuthComponent}
+    {path :'login',component:UserAuthComponent},
+    {path:'court',component:CourtdetailsComponent}
 ];
 
   
