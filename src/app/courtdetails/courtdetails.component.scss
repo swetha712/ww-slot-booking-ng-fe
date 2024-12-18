@@ -1,0 +1,78 @@
+.date-slider-container {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+  }
+  .date-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+  }
+  .date-item {
+    padding: 10px 30px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  .date-item.selected {
+    background-color: #4caf50;
+    color: white;
+  }
+  /* Style for booked slots */
+.booked-slot {
+  border: 2px solid red;
+  color:white;
+  background-color: #e35959; /* Light red background for better visibility */
+  cursor: not-allowed;
+}
+
+/* Style for available slots */
+.available-slot {
+  border: 2px solid rgb(69, 191, 69);
+  color: rgb(255, 255, 255);
+  background-color: #71e771; /* Light green background for better visibility */
+  cursor: pointer;
+}
+.time-slots{
+    display: flex;
+    justify-content: space-evenly;
+    margin:50px 0px;
+}
+/* General button styling */
+.time-slots button {
+  padding: 10px 8px;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+/* Hover effect for available slots */
+.available-slot:hover {
+  background-color: #ccffcc; /* Slightly darker green */
+  box-shadow: 0px 0px 5px green;
+}
+.session-buttons{
+  display: flex;
+  justify-content: space-evenly;
+}
+.bookbtn{
+    display: flex;
+    justify-content: center;
+}
+/* Selected session button style */
+.selected-session {
+  background-color: #fdd835 !important; // Yellow background for selected session
+  color: #333 !important;
+  border: 2px solid #fbc02d;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Selected time slot style */
+.selected-slot {
+  background-color: #139c1a !important; // Orange background for selected slot
+  color: #fff !important;
+  border: 2px solid #f4511e;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

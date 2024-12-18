@@ -2,9 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
-@Injectable({
-  providedIn:'root',
-})
+@Injectable(
+
+)
 
 export class Apiservice {
   private apiUrl ='http://localhost:3000/userinfo';
@@ -12,8 +12,7 @@ private turfUrl ='http://localhost:3000/turfdetails'
 private currentUserSubject = new BehaviorSubject<any>(null);
 private loginurl ='http://localhost:3000/logged-in'
   constructor(private http:HttpClient) {}
-
-  getuser(): Observable<any> {
+  getuser():Observable<any>{
     return this.http.get<any>(this.apiUrl);
   }
   getTurfDetails(): Observable<any> {

@@ -1,0 +1,48 @@
+<div class="date-slider-container">
+    <button (click)="scrollLeft()" class="scroll-button">&#9664;</button>
+    <div class="date-slider">
+      <div *ngFor="let date of dateList" 
+           [class.selected]="date.date === selectedDate" 
+           (click)="onDateSelect(date)" 
+           class="date-item">
+        <p>{{ date.day }}</p>
+        <p>{{ date.displayDate }}</p>
+      </div>
+    </div>
+    <button (click)="scrollRight()" class="scroll-button">&#9654;</button>
+  </div>
+  
+  <div *ngIf="selectedDate">
+<section class="session-buttons mt-5">
+    @for( btn of sessionButton; track btn){
+       <button mat-fab extended (click)="session(btn)" [ngClass]="{
+        'selected-session': selectedSession?.buttonName === btn.buttonName
+      }" class="btnindex">
+         <mat-icon>{{ btn.iconName }}</mat-icon>
+      {{ btn.buttonName }}
+    </button>
+        }
+    </section>
+  
+    <div class="time-slots">
+        <button
+          mat-stroked-button
+          *ngFor="let slot of availableSlots"
+          [disabled]="slot.status === 'booked'"
+          (click)="selectSlot(slot)"
+          [ngClass]="{
+      'booked-slot': slot.status === 'booked',
+      'available-slot': slot.status === 'available',
+      'selected-slot': selectedSlot?.label === slot.label
+    }"
+        >
+          {{ slot.label }}
+        </button>
+      </div>
+      
+  
+    <div *ngIf="selectedSlot" class="bookbtn">
+      <button class="btn btn-success px-4" (click)="bookSlot()">Book Now</button>
+    </div>
+  </div>
+  

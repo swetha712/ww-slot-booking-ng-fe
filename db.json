@@ -23,6 +23,7 @@
     }
   ],
   "turfdetails": [
+  
     {
       "id": "1",
       "turfname": "AADUKALAM",
@@ -162,5 +163,6 @@
     {
       "id": "7fdb"
     }
+ 
   ]
 }
