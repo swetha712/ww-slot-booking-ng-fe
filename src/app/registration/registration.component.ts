@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RegistrationService } from '../service/registration-service';
+import { RegisterForm4Component } from '../register-form4/register-form4.component';
 
 @Component({
   selector: 'app-registration',

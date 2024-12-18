@@ -3,7 +3,7 @@
   <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
     <div class="form-field">
       <label for="name">Name</label>
-      <input id="name" type="text" formControlName="name" placeholder="Enter your name" />
+      <input class="input-box" id="name" type="text" formControlName="name" placeholder="Enter your name" />
       <small *ngIf="registrationForm.get('name')?.invalid && registrationForm.get('name')?.touched">
         Name is required.
       </small>
@@ -33,8 +33,9 @@
     <div class="form-field email-field">
       <label for="email">Email</label>
       <div class="email-input-container">
-        <input id="email" type="email" formControlName="email" placeholder="Enter your email" />
-        <button type="button" (click)="sendEmailOtp()" [disabled]="registrationForm.get('email')?.invalid">Send OTP</button>
+        <input class="input-box" id="email" type="email" formControlName="email" placeholder="Enter your email" />
+        <button type="button" (click)="sendEmailOtp()" [disabled]="registrationForm.get('email')?.invalid">Send
+          OTP</button>
       </div>
       <small *ngIf="registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched">
         Valid email is required.
@@ -44,16 +45,38 @@
     <div class="form-field" *ngIf="emailOtpSent">
       <label for="emailOtp">Enter OTP</label>
       <div class="otp-input-container">
-        <input id="emailOtp" type="text" formControlName="emailOtp" placeholder="Enter the OTP" />
+        <input class="input-box" id="emailOtp" type="text" formControlName="emailOtp" placeholder="Enter the OTP" />
         <button type="button" (click)="verifyEmailOtp()">Verify</button>
       </div>
       <small *ngIf="!isEmailVerified && emailOtpSent && !emailOtpValid">Invalid OTP entered.</small>
       <small *ngIf="isEmailVerified">Verified successfully.</small>
     </div>
 
+    <div class="form-field phone-field">
+      <label for="phone">Phone Number</label>
+      <div class="phone-input-container">
+        <input class="input-box" id="phone" type="tel" formControlName="phone" placeholder="Enter your phone number" />
+        <!-- <button type="button" (click)="sendPhoneOtp()" [disabled]="registrationForm.get('phone')?.invalid">Send
+          OTP</button> -->
+      </div>
+      <small *ngIf="registrationForm.get('phone')?.invalid && registrationForm.get('phone')?.touched">
+        Valid phone number is required.
+      </small>
+    </div>
+
+    <!-- <div class="form-field" *ngIf="phoneOtpSent">
+      <label for="phoneOtp">Enter OTP</label>
+      <div class="otp-input-container">
+        <input class="input-box" id="phoneOtp" type="text" formControlName="phoneOtp" placeholder="Enter the OTP" />
+        <button type="button" (click)="verifyPhoneOtp()">Verify</button>
+      </div>
+      <small *ngIf="!isPhoneVerified && phoneOtpEntered && !phoneOtpValid">Invalid OTP entered.</small>
+      <small *ngIf="isPhoneVerified">Verified successfully.</small>
+    </div> -->
+
     <div class="form-field">
       <label for="password">Password</label>
-      <input id="password" type="password" formControlName="password" placeholder="Enter your password" />
+      <input class="input-box" id="password" type="password" formControlName="password" placeholder="Enter your password" />
       <small *ngIf="registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched">
         Password must be at least 6 characters long.
       </small>
@@ -61,16 +84,17 @@
 
     <div class="form-field">
       <label for="confirmPassword">Confirm Password</label>
-      <input id="confirmPassword" type="password" formControlName="confirmPassword" placeholder="Confirm your password" />
+      <input class="input-box" id="confirmPassword" type="password" formControlName="confirmPassword"
+        placeholder="Confirm your password" />
       <small *ngIf="registrationForm.errors?.['passwordMismatch'] && registrationForm.get('confirmPassword')?.touched">
         Passwords do not match.
       </small>
     </div>
 
-    <button type="submit" [disabled]="registrationForm.invalid">Submit</button>
+    <button class="mt-2" type="submit" [disabled]="registrationForm.invalid">Submit</button>
   </form>
 
-  <p class="signin-prompt">
+  <p class="signin-prompt mb-0">
     Already a member? <a (click)="navigateToLogin()">Sign In</a>
   </p>
 </div>

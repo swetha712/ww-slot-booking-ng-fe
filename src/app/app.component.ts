@@ -7,7 +7,10 @@ import { Apiservice } from '../services/apiservice.service';
 import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { UserAuthComponent } from './user-auth/user-auth.component';
 import { CommonModule } from '@angular/common';
+<<<<<<< HEAD
 import { TurfComponent } from './turf/turf.component';
+=======
+>>>>>>> 8ce76e097a996557d4cd036ec0ead7fcd8a8f162
 @Component({
   selector: 'app-root',
   standalone: true,

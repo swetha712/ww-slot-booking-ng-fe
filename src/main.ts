@@ -9,7 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { importProvidersFrom } from '@angular/core';
 
 
-bootstrapApplication(UserAuthComponent, {
+bootstrapApplication(AppComponent, {
   providers: [
     provideAnimations(),// Enables animations
     provideRouter(routes),
