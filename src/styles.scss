@@ -56,4 +56,9 @@ body {
     background-color: var(--danger);
     color: var(--danger-text);
   }
-  
+  :root{
+    --mdc-fab-container-color: #1eb6d5;
+    --mat-fab-foreground-color: #ffffff;
+    --mat-fab-state-layer-color: #2071d3;
+    --mat-fab-ripple-color: rgba(17, 136, 227, 0.1);
+}

@@ -1,64 +1,108 @@
 {
-    "userinfo":[
-        {
-            "id":1,
-"username":"Klaus",
-"password":"klaus@123",
-"mobile":7010879782,
-"email":"klaus@gmail.com"
-        },
-        {
-            "id":2,
-"username":"damon",
-"password":"damon@123",
-"mobile":7010876793,
-"email":"damon@gmail.com"
-        },
-        {
-            "id":3,
-"username":"severus",
-"password":"severus@123",
-"mobile":7010834782,
-"email":"severus@gmail.com"
-        }
-    ],
-    "turfdetails":[
-      {
-        "id":1,
-        "turfname":"Aadukalam",
-        "ownername":"Ravanan",
-        "image":"https://content3.jdmagicbox.com/comp/erode/k3/9999px424.x424.221017121321.d8k3/catalogue/aadukalam-multisports-park-vadamugam-vellode-erode-yoga-classes-zz466cfqxr.jpg",
-        "description":"This turf is well-maintained and provides a smooth playing experience. Perfect for football, cricket, or any other sport. Highly recommended!",
-        "location":"32/A RKR nagar, Boodhamur , Vriddhachalam",
-        "courtcount":2
-    }  ,
+  "userinfo": [
     {
-        "id":2,
-        "turfname":"Hogwards",
-        "turfownername":"Harry",
-        "image":"https://content3.jdmagicbox.com/v2/comp/chennai/y5/044pxx44.xx44.180606142031.h1y5/catalogue/aadukalam-sports-academy-tondiarpet-chennai-tennis-classes-fet3x7ee7p.jpg",
-        "description":"This turf is well-maintained and provides a smooth playing experience. Perfect for football, cricket, or any other sport. Highly recommended!",
-        "location":"2/B MGR nagar, neyveli TS , Neyveli",
-        "courtcount":3
+      "id": "1",
+      "username": "Klaus",
+      "password": "klaus@123",
+      "mobile": 7010879782,
+      "email": "klaus@gmail.com"
     },
     {
-        "id":3,
-        "turfname":"Plazo",
-        "turfownername":"JBasu",
-        "image":"https://turftown.in/_next/image?url=https%3A%2F%2Fturftown.s3.ap-south-1.amazonaws.com%2Fsuper_admin%2Ftt-1709020502972.webp&w=3840&q=75",
-        "description":"This turf is well-maintained and provides a smooth playing experience. Perfect for football, cricket, or any other sport. Highly recommended!",
-        "location":"4/A Roja Street , Periyar Nagar(north) , Vriddhachalam",
-        "courtcount":3
+      "id": "2",
+      "username": "damon",
+      "password": "damon@123",
+      "mobile": 7010876793,
+      "email": "damon@gmail.com"
+    },
+    {
+      "id": "3",
+      "username": "severus",
+      "password": "severus@123",
+      "mobile": 7010834782,
+      "email": "severus@gmail.com"
     }
-    ],
-    "courtdetails":[
+  ],
+  "turfdetails": [
+    {
+      "id": "1",
+      "turfname": "Aadukalam",
+      "ownername": "Ravanan",
+      "image": "https://content3.jdmagicbox.com/comp/erode/k3/9999px424.x424.221017121321.d8k3/catalogue/aadukalam-multisports-park-vadamugam-vellode-erode-yoga-classes-zz466cfqxr.jpg",
+      "description": "This turf is well-maintained and provides a smooth playing experience. Perfect for football, cricket, or any other sport. Highly recommended!",
+      "location": "32/A RKR nagar, Boodhamur , Vriddhachalam",
+      "courts": [
         {
-
+          "courtno": 1,
+          "court_img": "",
+          "slots": [
+            {
+              "date": "2024-12-17",
+              "slotno": 7
+            },
+            {
+              "date": "2024-12-20",
+              "slotno": 5
+            },
+            {
+              "date": "2024-12-18",
+              "slotno": 13
+            },
+            {
+              "date": "2024-12-18",
+              "slotno": 15
+            },
+            {
+              "date": "2024-12-18",
+              "slotno": 18
+            }
+          ]
         }
-    ],
-    "orderdetails":[
+      ]
+    },
+    {
+      "id": "2",
+      "turfname": "Hogwards",
+      "turfownername": "Harry",
+      "image": "https://content3.jdmagicbox.com/v2/comp/chennai/y5/044pxx44.xx44.180606142031.h1y5/catalogue/aadukalam-sports-academy-tondiarpet-chennai-tennis-classes-fet3x7ee7p.jpg",
+      "description": "This turf is well-maintained and provides a smooth playing experience. Perfect for football, cricket, or any other sport. Highly recommended!",
+      "location": "2/B MGR nagar, neyveli TS , Neyveli",
+      "courts": [
         {
-
+          "courtno": 2,
+          "court_img": "",
+          "slots": [
+            {
+              "date": "2024-12-17",
+              "slotno": 1
+            }
+          ]
         }
-    ]
+      ]
+    },
+    {
+      "id": "3",
+      "turfname": "Plazo",
+      "turfownername": "JBasu",
+      "image": "https://turftown.in/_next/image?url=https%3A%2F%2Fturftown.s3.ap-south-1.amazonaws.com%2Fsuper_admin%2Ftt-1709020502972.webp&w=3840&q=75",
+      "description": "This turf is well-maintained and provides a smooth playing experience. Perfect for football, cricket, or any other sport. Highly recommended!",
+      "location": "4/A Roja Street , Periyar Nagar(north) , Vriddhachalam",
+      "courts": [
+        {
+          "courtno": 1,
+          "court_img": "",
+          "slots": [
+            {
+              "date": "2024-12-19",
+              "slotno": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "orderdetails": [
+    {
+      "id": "7fdb"
+    }
+  ]
 }

@@ -6,10 +6,11 @@ import { HeaderComponent } from "./header/header.component";
 import { Apiservice } from '../services/apiservice.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { CourtdetailsComponent } from "./courtdetails/courtdetails.component";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent,CommonModule],
+  imports: [HeaderComponent, CommonModule, CourtdetailsComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   providers: [Apiservice]
