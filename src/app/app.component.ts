@@ -4,6 +4,7 @@ import { ThemeService } from '../services/theme.service';
 import { ThemeConflictService } from '../services/theme-conflict.service';
 import { HeaderComponent } from "./header/header.component";
 import { Apiservice } from '../services/apiservice.service';
+
 import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { UserAuthComponent } from './user-auth/user-auth.component';
 import { CommonModule } from '@angular/common';
@@ -14,7 +15,7 @@ import { TurfComponent } from './turf/turf.component';
   imports: [HeaderComponent,  CommonModule, UserAuthComponent,RouterOutlet,RouterModule,TurfComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers: [Apiservice]
+  providers: [Apiservice,ThemeConflictService,ThemeService]
   
 })
 export class AppComponent implements OnInit {
@@ -48,8 +49,8 @@ export class AppComponent implements OnInit {
         this.themeService.switchFont(this.selectedFont);
       }
     this.apiservice.getuser().subscribe((data:any)=>{
-this.user=data;
-console.log(data);
+    this.user=data;
+    console.log(data);
     })
     }
   

@@ -7,8 +7,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 
 export class Apiservice {
- 
-private apiUrl ='http://localhost:3000/userinfo';
+  private apiUrl ='http://localhost:3000/userinfo';
 private turfUrl ='http://localhost:3000/turfdetails'
 private currentUserSubject = new BehaviorSubject<any>(null);
 private loginurl ='http://localhost:3000/logged-in'
@@ -17,6 +16,10 @@ private loginurl ='http://localhost:3000/logged-in'
   getuser(): Observable<any> {
     return this.http.get<any>(this.apiUrl);
   }
+  getTurfDetails(): Observable<any> {
+    return this.http.get<any>(this.turfUrl);
+  }
+  
 
   addUser(userDetails: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, userDetails);
