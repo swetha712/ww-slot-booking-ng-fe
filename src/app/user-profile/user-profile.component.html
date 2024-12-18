@@ -1,0 +1,31 @@
+<div class="profile-container">
+    <!-- Profile Header -->
+    <div class="profile-header">
+      <!-- Profile Image -->
+      <div class="profile-image-container">
+        <img
+          class="profile-image"
+          [src]="user?.image || 'https://i.pinimg.com/736x/a1/ee/94/a1ee94780c268900bb8e322a48d147f7.jpg'"
+          alt="Profile Picture"
+        />
+      </div>
+      <div class="profile-info">
+        <h2>{{ user?.username }}</h2>
+        <p>{{ user?.email }}</p>
+      </div>
+    </div>
+  
+    <!-- Edit Button -->
+    <div class="action-buttons">
+      <button (click)="goToEditPage()" class="action-btn edit-btn">
+        <span class="material-icons">edit</span> Edit Profile
+      </button>
+      <button *ngFor="let action of profileActions" class="action-btn">
+        <span class="material-icons">{{ action.icon }}</span> {{ action.name }}
+      </button>
+      <button class="action-btn logout-btn" (click)="logout()">
+        <span class="material-icons">logout</span> Logout
+      </button>
+    </div>
+  </div>
+  
