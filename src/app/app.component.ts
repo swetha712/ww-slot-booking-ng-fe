@@ -1,23 +1,25 @@
-// app.component.ts
+import { RouterOutlet } from '@angular/router';
+import { CourtdetailsComponent } from "./courtdetails/courtdetails.component";
 import { Component,OnInit } from '@angular/core';
 import { ThemeService } from '../services/theme.service';
 import { ThemeConflictService } from '../services/theme-conflict.service';
 import { HeaderComponent } from "./header/header.component";
 import { Apiservice } from '../services/apiservice.service';
-import { Router, RouterModule, RouterOutlet } from '@angular/router';
+
+import { Router, RouterModule } from '@angular/router';
 import { UserAuthComponent } from './user-auth/user-auth.component';
 import { CommonModule } from '@angular/common';
-<<<<<<< HEAD
+// <<<<<<< HEAD
 import { TurfComponent } from './turf/turf.component';
-=======
->>>>>>> 8ce76e097a996557d4cd036ec0ead7fcd8a8f162
+// =======
+// >>>>>>> 8ce76e097a996557d4cd036ec0ead7fcd8a8f162
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent,  CommonModule, UserAuthComponent,RouterOutlet,RouterModule,TurfComponent],
+  imports: [HeaderComponent, CommonModule, CourtdetailsComponent,RouterOutlet],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers: [Apiservice]
+  providers: [Apiservice,ThemeConflictService,ThemeService]
   
 })
 export class AppComponent implements OnInit {
@@ -51,8 +53,8 @@ export class AppComponent implements OnInit {
         this.themeService.switchFont(this.selectedFont);
       }
     this.apiservice.getuser().subscribe((data:any)=>{
-this.user=data;
-console.log(data);
+    this.user=data;
+    console.log(data);
     })
     }
   

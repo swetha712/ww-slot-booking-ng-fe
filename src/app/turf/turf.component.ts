@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Apiservice } from '../../services/apiservice.service';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { MatButton } from '@angular/material/button';
 import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
@@ -28,7 +28,8 @@ export class TurfComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     // Fetch turf details from the API
-    this.apiService.getuser().subscribe((data) => {
+    this.apiService.getTurfDetails().subscribe((data) => {
+      
       this.turfDetails = {
         ...data[0],
         images: [
@@ -37,8 +38,10 @@ export class TurfComponent implements OnInit, OnDestroy {
           data[0].image3,
           data[0].image4,
           data[0].image5,
+          data[0].court_image1,
+          data[0].court_image2
         ],
-        courtImages: [data[0].courtimage1, data[0].courtimage2],
+        courtImages: [data[0].court_image1, data[0].court_image2],
       };
 
       this.galleryImages = this.turfDetails.images;
@@ -89,7 +92,12 @@ export class TurfComponent implements OnInit, OnDestroy {
 
   bookNow() {
     if (this.selectedCourt) {
-      this.router.navigate(['/court', this.selectedCourt.id]);
+      // Navigate to 'profile' route(dummy)
+      this.router.navigate(['/profile']);
     }
   }
-}
+  
+    
+  }
+
+
