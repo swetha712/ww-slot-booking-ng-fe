@@ -23,17 +23,24 @@
     }
   ],
   "turfdetails": [
+  
     {
       "id": "1",
-      "turfname": "Aadukalam",
+      "turfname": "AADUKALAM",
       "ownername": "Ravanan",
-      "image": "https://content3.jdmagicbox.com/comp/erode/k3/9999px424.x424.221017121321.d8k3/catalogue/aadukalam-multisports-park-vadamugam-vellode-erode-yoga-classes-zz466cfqxr.jpg",
+      "image1": "https://content3.jdmagicbox.com/comp/erode/k3/9999px424.x424.221017121321.d8k3/catalogue/aadukalam-multisports-park-vadamugam-vellode-erode-yoga-classes-zz466cfqxr.jpg",
+      "image2": "https://turftown.in/_next/image?url=https%3A%2F%2Fturftown.s3.ap-south-1.amazonaws.com%2Fsuper_admin%2Ftt-1709020502972.webp&w=3840&q=75",
+      "image3": "https://content3.jdmagicbox.com/v2/comp/chennai/y5/044pxx44.xx44.180606142031.h1y5/catalogue/aadukalam-sports-academy-tondiarpet-chennai-tennis-classes-fet3x7ee7p.jpg",
+      "image4": "https://www.gwsportsapp.in/media/ground-images/gallery/MC45MjU5NDUwMCAxNjI5MjgxNTAx.jpeg",
+      "image5": "https://grass1.com.au/wp-content/uploads/2021/07/Basketball-Kew.jpg",
+      "court_image1": "https://grass1.com.au/wp-content/uploads/2021/07/Basketball-Middle-Park.jpg",
+      "court_image2": "https://cdn.synthetic-turf.com/uploads/2019/10/02132154/NYLAWN-PICKLEBALL-1-1140x855.jpg",
       "description": "This turf is well-maintained and provides a smooth playing experience. Perfect for football, cricket, or any other sport. Highly recommended!",
       "location": "32/A RKR nagar, Boodhamur , Vriddhachalam",
       "courts": [
         {
           "courtno": 1,
-          "court_img": "",
+          "court_image1": "https://grass1.com.au/wp-content/uploads/2021/07/Basketball-Middle-Park.jpg",
           "slots": [
             {
               "date": "2024-12-17",
@@ -44,16 +51,8 @@
               "slotno": 5
             },
             {
-              "date": "2024-12-18",
-              "slotno": 13
-            },
-            {
-              "date": "2024-12-18",
-              "slotno": 15
-            },
-            {
-              "date": "2024-12-18",
-              "slotno": 18
+              "date": "2024-12-16",
+              "slotno": 7
             }
           ]
         }
@@ -61,7 +60,7 @@
     },
     {
       "id": "2",
-      "turfname": "Hogwards",
+      "turfname": "HOGWARDS",
       "turfownername": "Harry",
       "image": "https://content3.jdmagicbox.com/v2/comp/chennai/y5/044pxx44.xx44.180606142031.h1y5/catalogue/aadukalam-sports-academy-tondiarpet-chennai-tennis-classes-fet3x7ee7p.jpg",
       "description": "This turf is well-maintained and provides a smooth playing experience. Perfect for football, cricket, or any other sport. Highly recommended!",
@@ -81,7 +80,67 @@
     },
     {
       "id": "3",
-      "turfname": "Plazo",
+      "turfname": "PLAZO",
+      "turfownername": "JBasu",
+      "image": "https://turftown.in/_next/image?url=https%3A%2F%2Fturftown.s3.ap-south-1.amazonaws.com%2Fsuper_admin%2Ftt-1709020502972.webp&w=3840&q=75",
+      "description": "This turf is well-maintained and provides a smooth playing experience. Perfect for football, cricket, or any other sport. Highly recommended!",
+      "location": "4/A Roja Street , Periyar Nagar(north) , Vriddhachalam",
+      "courts": [
+        {
+          "courtno": 1,
+          "court_img": "",
+          "slots": [
+            {
+              "date": "2024-12-19",
+              "slotno": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "turfname": "PLAZO",
+      "turfownername": "JBasu",
+      "image": "https://turftown.in/_next/image?url=https%3A%2F%2Fturftown.s3.ap-south-1.amazonaws.com%2Fsuper_admin%2Ftt-1709020502972.webp&w=3840&q=75",
+      "description": "This turf is well-maintained and provides a smooth playing experience. Perfect for football, cricket, or any other sport. Highly recommended!",
+      "location": "4/A Roja Street , Periyar Nagar(north) , Vriddhachalam",
+      "courts": [
+        {
+          "courtno": 1,
+          "court_img": "",
+          "slots": [
+            {
+              "date": "2024-12-19",
+              "slotno": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "turfname": "PLAZO",
+      "turfownername": "JBasu",
+      "image": "https://turftown.in/_next/image?url=https%3A%2F%2Fturftown.s3.ap-south-1.amazonaws.com%2Fsuper_admin%2Ftt-1709020502972.webp&w=3840&q=75",
+      "description": "This turf is well-maintained and provides a smooth playing experience. Perfect for football, cricket, or any other sport. Highly recommended!",
+      "location": "4/A Roja Street , Periyar Nagar(north) , Vriddhachalam",
+      "courts": [
+        {
+          "courtno": 1,
+          "court_img": "",
+          "slots": [
+            {
+              "date": "2024-12-19",
+              "slotno": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "turfname": "PLAZO",
       "turfownername": "JBasu",
       "image": "https://turftown.in/_next/image?url=https%3A%2F%2Fturftown.s3.ap-south-1.amazonaws.com%2Fsuper_admin%2Ftt-1709020502972.webp&w=3840&q=75",
       "description": "This turf is well-maintained and provides a smooth playing experience. Perfect for football, cricket, or any other sport. Highly recommended!",
@@ -104,5 +163,6 @@
     {
       "id": "7fdb"
     }
+ 
   ]
 }
