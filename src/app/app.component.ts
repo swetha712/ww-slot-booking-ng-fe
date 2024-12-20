@@ -9,14 +9,13 @@ import { Apiservice } from '../services/apiservice.service';
 import { Router, RouterModule } from '@angular/router';
 import { UserAuthComponent } from './user-auth/user-auth.component';
 import { CommonModule } from '@angular/common';
-// <<<<<<< HEAD
 import { TurfComponent } from './turf/turf.component';
-// =======
-// >>>>>>> 8ce76e097a996557d4cd036ec0ead7fcd8a8f162
+import { HomeComponent } from "./components/home/home.component";
+import { CarouselComponent } from "./carousel/carousel.component";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent, CommonModule, CourtdetailsComponent,RouterOutlet],
+  imports: [HeaderComponent, CommonModule, RouterOutlet, RouterModule, CarouselComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   providers: [Apiservice,ThemeConflictService,ThemeService]

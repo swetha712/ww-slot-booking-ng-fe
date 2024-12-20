@@ -7,6 +7,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { UserAuthComponent } from './app/user-auth/user-auth.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { importProvidersFrom } from '@angular/core';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 
 bootstrapApplication(AppComponent, {
@@ -20,6 +21,6 @@ bootstrapApplication(AppComponent, {
     {
       provide: 'APP_ROUTES',
       useValue: routes
-    }
+    }, provideAnimationsAsync()
   ],
 }).catch(err => console.error(err));
