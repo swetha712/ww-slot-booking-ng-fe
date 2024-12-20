@@ -93,7 +93,7 @@ export class TurfComponent implements OnInit, OnDestroy {
   bookNow() {
     if (this.selectedCourt) {
       // Navigate to 'profile' route(dummy)
-      this.router.navigate(['/profile']);
+      this.router.navigate(['/court']);
     }
   }
   

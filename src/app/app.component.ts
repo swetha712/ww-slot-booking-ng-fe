@@ -9,10 +9,11 @@ import { Apiservice } from '../services/apiservice.service';
 import { Router, RouterModule } from '@angular/router';
 import { UserAuthComponent } from './user-auth/user-auth.component';
 import { CommonModule } from '@angular/common';
+import { BottomNavComponent } from "./bottom-nav/bottom-nav.component";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent, CommonModule, CourtdetailsComponent,RouterOutlet],
+  imports: [HeaderComponent, CommonModule, CourtdetailsComponent, RouterOutlet, BottomNavComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   providers: [Apiservice,ThemeConflictService,ThemeService]
