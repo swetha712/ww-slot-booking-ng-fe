@@ -1,0 +1,29 @@
+.bottom-nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #c998f4;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+  
+    button {
+      flex: 1;
+      text-align: center;
+    }
+  
+    mat-icon {
+      font-size: 24px;
+    }
+  
+    span {
+      display: block;
+      font-size: 12px;
+    }
+  
+    button:hover {
+      background-color: #e0e0e0;
+    }
+  }
+  
