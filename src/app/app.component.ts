@@ -12,10 +12,11 @@ import { CommonModule } from '@angular/common';
 import { TurfComponent } from './turf/turf.component';
 import { HomeComponent } from "./components/home/home.component";
 import { CarouselComponent } from "./carousel/carousel.component";
+import { BottomNavComponent } from "./bottom-nav/bottom-nav.component";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent, CommonModule, RouterOutlet, RouterModule, CarouselComponent],
+  imports: [HeaderComponent, CommonModule, CourtdetailsComponent,RouterOutlet],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   providers: [Apiservice,ThemeConflictService,ThemeService]

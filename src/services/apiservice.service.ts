@@ -2,11 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
-@Injectable(
-
-)
+@Injectable({
+  providedIn: 'root',
+})
 
 export class Apiservice {
+  getOrdersByUser(id: any) {
+    throw new Error('Method not implemented.');
+  }
   private apiUrl ='http://localhost:3000/userinfo';
 private turfUrl ='http://localhost:3000/turfdetails'
 private currentUserSubject = new BehaviorSubject<any>(null);
