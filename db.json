@@ -22,32 +22,11 @@
       "email": "severus@gmail.com"
     },
     {
-      "id": "0cb9",
-      "name": "swetha",
-      "Email": "swetha@gmail.com",
-      "phone": 9876543210,
-      "password": "1111"
-    },
-    {
-      "id": "1e50",
-      "name": "new",
-      "Email": "new@gmail.com",
-      "phone": 9876543210,
+      "id": "04bd",
+      "name": "mjswetha",
+      "Email": "mj@gmail.com",
+      "phone": 9361144096,
       "password": "123456"
-    },
-    {
-      "id": "8d60",
-      "name": "jothibasu",
-      "Email": "joe@gmail.com",
-      "phone": 9876543210,
-      "password": "123456"
-    },
-    {
-      "id": "daea",
-      "name": "mj@gmail.com",
-      "Email": "",
-      "phone": "",
-      "password": "1234"
     }
   ],
   "turfdetails": [
@@ -210,7 +189,6 @@
               "slotno": 1
             }
           ]
-
         }
       ]
     }

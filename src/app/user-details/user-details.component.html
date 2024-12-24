@@ -2,9 +2,9 @@
     <h2>Edit Profile</h2>
     <form [formGroup]="editForm" (ngSubmit)="saveUser()">
       <div class="form-field">
-        <label for="username">Username:</label>
-        <input id="username" formControlName="username" type="text" />
-        <div *ngIf="editForm.get('username')?.invalid && editForm.get('username')?.touched">
+        <label for="name">name:</label>
+        <input id="name" formControlName="name" type="text" />
+        <div *ngIf="editForm.get('name')?.invalid && editForm.get('name')?.touched">
           <small>Username is required.</small>
         </div>
       </div>
@@ -18,17 +18,17 @@
       </div>
   
       <div class="form-field">
-        <label for="email">Email:</label>
-        <input id="email" formControlName="email" type="email" />
-        <div *ngIf="editForm.get('email')?.invalid && editForm.get('email')?.touched">
+        <label for="Email">Email:</label>
+        <input id="Email" formControlName="Email" type="Email" />
+        <div *ngIf="editForm.get('Email')?.invalid && editForm.get('Email')?.touched">
           <small>Enter a valid email address.</small>
         </div>
       </div>
   
       <div class="form-field">
-        <label for="mobile">Mobile:</label>
-        <input id="mobile" formControlName="mobile" type="text" />
-        <div *ngIf="editForm.get('mobile')?.invalid && editForm.get('mobile')?.touched">
+        <label for="phone">Mobile:</label>
+        <input id="phone" formControlName="phone" type="text" />
+        <div *ngIf="editForm.get('phone')?.invalid && editForm.get('phone')?.touched">
           <small>Mobile number must be 10 digits.</small>
         </div>
       </div>
