@@ -9,8 +9,9 @@ import { UserAuthComponent } from './user-auth/user-auth.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { CourtdetailsComponent } from './courtdetails/courtdetails.component';
 import { BottomNavComponent } from './bottom-nav/bottom-nav.component';
+import { HomeComponent } from './components/home/home.component';
 export const routes: Routes = [
-    { path: '', redirectTo: '/profile', pathMatch: 'full' },
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'profile', component: UserProfileComponent },
     { path: 'edit-profile', component: UserDetailsComponent },
     {path:'turfdetails',component:TurfComponent},
@@ -18,7 +19,9 @@ export const routes: Routes = [
     {path :'login',component:UserAuthComponent},
     {path:'court',component:CourtdetailsComponent},
     {path:'bottomnav',component:BottomNavComponent},
-    {path:'carousel',component:CarouselComponent}
+    {path:'carousel',component:CarouselComponent},
+    {path:'home',component:HomeComponent},
+    {path:'user-details',component:UserDetailsComponent},
 ];
 
   

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -21,6 +21,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class HeaderComponent {
   searchQuery: string = '';
+  @Output() searchEvent = new EventEmitter<string>();
 
   constructor(private router: Router) {}
 
@@ -30,6 +31,7 @@ export class HeaderComponent {
 
   performSearch(): void {
     console.log(`Searching for: ${this.searchQuery}`);
-    // Add logic to route to search results page or perform search
+    this.searchEvent.emit(this.searchQuery); 
+    
   }
 }

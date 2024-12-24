@@ -11,7 +11,9 @@
 
     <!-- Search Bar -->
     <div class="search-bar">
-        <input matInput [(ngModel)]="searchQuery" placeholder="Search for items..." />
+        <mat-form-field>
+            <input matInput [(ngModel)]="searchQuery" placeholder="Search Turf Name" />
+        </mat-form-field>
         <button mat-raised-button color="primary" (click)="performSearch()">Search</button>
     </div>
 
