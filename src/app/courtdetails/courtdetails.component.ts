@@ -16,6 +16,9 @@ import { Apiservice } from '../../services/apiservice.service';
   styleUrl: './courtdetails.component.scss'
 })
 export class CourtdetailsComponent implements OnInit {
+selectCourt(_t45: any) {
+throw new Error('Method not implemented.');
+}
   dateList: any[] = [];
   selectedDate: string = '';
   selectedSlot: any = null;
@@ -29,6 +32,8 @@ export class CourtdetailsComponent implements OnInit {
   ];
 
   private snackBar = inject(MatSnackBar);
+slot: any;
+turfDetails: any;
 
   constructor(private apiserv: Apiservice) {}
 

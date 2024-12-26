@@ -29,31 +29,39 @@ export class TurfComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     // Fetch turf details from the API
     this.apiService.getTurfDetails().subscribe((data) => {
-      
-      this.turfDetails = {
-        ...data[0],
-        images: [
-          data[0].image1,
-          data[0].image2,
-          data[0].image3,
-          data[0].image4,
-          data[0].image5,
-          data[0].court_image1,
-          data[0].court_image2
-        ],
-        courtImages: [data[0].court_image1, data[0].court_image2],
-      };
-
-      this.galleryImages = this.turfDetails.images;
-      this.courtDetails = [
-        { id: 1, image: this.turfDetails.courtImages[0], name: 'Court 1' },
-        { id: 2, image: this.turfDetails.courtImages[1], name: 'Court 2' },
-      ];
-
-      // Start auto-scrolling
-      this.startAutoScroll();
+      if (data && data.length > 0) {
+        this.turfDetails = {
+          ...data[0],
+          images: [
+            data[0]?.image1 || 'default-image1.jpg',
+            data[0]?.image2 || 'default-image2.jpg',
+            data[0]?.image3 || 'default-image3.jpg',
+            data[0]?.image4 || 'default-image4.jpg',
+            data[0]?.image5 || 'default-image5.jpg',
+            data[0]?.court_image1 || 'default-court-image1.jpg',
+            data[0]?.court_image2 || 'default-court-image2.jpg',
+          ],
+          courtImages: [
+            data[0]?.court_image1 || 'default-court-image1.jpg',
+            data[0]?.court_image2 || 'default-court-image2.jpg',
+          ],
+        };
+  
+        this.galleryImages = this.turfDetails.images;
+        this.courtDetails = [
+          { id: 1, image: this.turfDetails.courtImages[0], name: 'Court 1' },
+          { id: 2, image: this.turfDetails.courtImages[1], name: 'Court 2' },
+        ];
+  
+        // Start auto-scrolling
+        this.startAutoScroll();
+      } else {
+        console.error('No data found for turf details');
+        this.turfDetails = {}; // Fallback initialization
+      }
     });
   }
+  
  
   amenities = [
     { name: 'Drinking Water', icon: 'local_drink' },
