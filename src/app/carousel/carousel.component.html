@@ -1,4 +1,4 @@
-<p>Carousel Component</p>
+<!-- <p>Carousel Component</p>
 <div class="carousel-container">
   <ngx-slick-carousel class="carousel" [config]="carouselConfig">
     <div *ngFor="let turf of turfDetails" class="carousel-item">
@@ -9,5 +9,38 @@
       </mat-card>
     </div>
   </ngx-slick-carousel>
-</div>
+</div> -->
 
+
+
+
+
+<div class="carousel-container" (mouseover)="stopAutoplay()" (mouseout)="startAutoplay()">
+  <div class="carousel-slides">
+    <div
+      class="carousel-slide"
+      *ngFor="let turf of turfDetails || []; let i = index"
+      [ngClass]="{ 'active': i === currentSlide }"
+    >
+      <img [src]="turf.image1" alt="{{ turf.turfname }}" />
+      <div class="slide-content">
+        <h3>{{ turf.turfname }}</h3>
+        <p>{{ turf.description }}</p>
+        <a href="#" class="button">Explore Now</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Navigation Arrows -->
+  <div class="arrow-left" (click)="prevSlide()"></div>
+  <div class="arrow-right" (click)="nextSlide()"></div>
+
+  <!-- Pagination Dots -->
+  <div class="pagination-dots">
+    <span
+      *ngFor="let turf of turfDetails || []; let i = index"
+      [ngClass]="{ 'active-dot': i === currentSlide }"
+      (click)="goToSlide(i)"
+    ></span>
+  </div>
+</div>

@@ -16,7 +16,7 @@ import { BottomNavComponent } from "./bottom-nav/bottom-nav.component";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent, CommonModule, CourtdetailsComponent, RouterOutlet, CarouselComponent, BottomNavComponent,HomeComponent],
+  imports: [HeaderComponent, CommonModule, CarouselComponent, BottomNavComponent,HomeComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   providers: [Apiservice,ThemeConflictService,ThemeService]
