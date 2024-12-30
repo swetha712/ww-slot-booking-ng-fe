@@ -2,7 +2,7 @@
   <!-- Full-size auto-scrollable carousel -->
   <div class="carousel">
     <img
-      [src]="turfDetails.images[currentImageIndex]"
+      [src]="turfDetails?.images?.[currentImageIndex]"
       alt="Carousel Image"
       class="carousel-image"
     />

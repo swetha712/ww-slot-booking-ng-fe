@@ -1,19 +1,21 @@
-<div class="bottom-nav">
-    <button mat-button (click)="navigateTo('/court')">
-      <mat-icon>home</mat-icon>
-      <span></span>
-    </button>
-    <button mat-button (click)="navigateTo('/orderdetails')">
-      <mat-icon>search</mat-icon>
-      <span></span>
-    </button>
-    <button mat-button (click)="navigateTo('/profile')">
-      <mat-icon>person</mat-icon>
-      <span></span>
-    </button>
-    <button mat-button (click)="navigateTo('/turfdetails')">
-      <mat-icon>settings</mat-icon>
-      <span></span>
-    </button>
-  </div>
-  
+<div 
+  class="bottom-nav" 
+  [class.hidden]="isHidden"
+>
+  <button mat-button (click)="navigateTo('/court')">
+    <mat-icon>home</mat-icon>
+    <span>Home</span>
+  </button>
+  <button mat-button (click)="navigateTo('/orderdetails')">
+    <mat-icon>search</mat-icon>
+    <span>Search</span>
+  </button>
+  <button mat-button (click)="navigateTo('/profile')">
+    <mat-icon>person</mat-icon>
+    <span>Profile</span>
+  </button>
+  <button mat-button (click)="navigateTo('/turfdetails')">
+    <mat-icon>settings</mat-icon>
+    <span>Settings</span>
+  </button>
+</div>
