@@ -8,12 +8,14 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { Apiservice } from '../../services/apiservice.service';
+
 @Component({
   selector: 'app-courtdetails',
   standalone: true,
   imports: [MatButtonModule,CommonModule,FormsModule,MatDialogModule,MatCardModule,MatIconModule],
   templateUrl: './courtdetails.component.html',
-  styleUrl: './courtdetails.component.scss'
+  styleUrl: './courtdetails.component.scss',
+
 })
 export class CourtdetailsComponent implements OnInit {
 selectCourt(_t45: any) {

@@ -6,6 +6,8 @@ import { Router, RouterOutlet } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { MatButton } from '@angular/material/button';
 import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
+import { ThemeConflictService } from '../../services/theme-conflict.service';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-turf',
@@ -13,7 +15,7 @@ import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
   styleUrls: ['./turf.component.scss'],
   standalone: true,
   imports: [CommonModule, HttpClientModule, MatIcon,MatAccordion,MatExpansionModule],
-  providers: [Apiservice],
+  providers: [Apiservice,ThemeConflictService, ThemeService],
 })
 export class TurfComponent implements OnInit, OnDestroy {
   turfDetails: any = {};
@@ -24,7 +26,9 @@ export class TurfComponent implements OnInit, OnDestroy {
   galleryImages: string[] = [];
   autoScrollInterval: any;
 
-  constructor(private apiService: Apiservice, private router: Router) {}
+  constructor(private apiService: Apiservice,
+     private router: Router,
+     private themeService: ThemeService) {}
 
   ngOnInit(): void {
     // Fetch turf details from the API
@@ -60,6 +64,7 @@ export class TurfComponent implements OnInit, OnDestroy {
         this.turfDetails = {}; // Fallback initialization
       }
     });
+    
   }
   
  

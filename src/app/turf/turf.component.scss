@@ -13,8 +13,9 @@
     }
   }
 mat-expansion-panel {
-  background-color: #76f9f3; 
-  color: #333; 
+ // background-color: #76f9f3; 
+ background-color: var(--primary-color);
+  color:var(--text-color); 
   border: 1px solid #ddd;
   border-radius: 8px;
   margin-bottom: 8px;
@@ -26,19 +27,19 @@ mat-expansion-panel {
   }
 }
 mat-expansion-panel-header {
-  background-color: #93f1f0; 
+  background-color: var(--secondary-color); 
   font-weight: bold;
   border-bottom: 1px solid #ddd;
 
 
   &:hover {
-    background-color: #d1eaff;
+    background-color: var(--secondary-color);
   }
 }
 
 .mat-expansion-panel-body {
   padding: 16px;
-  background-color: #ffffff; 
+  background-color:var(--secondary-color); 
   border-top: 1px solid #ddd;
  
 

@@ -16,6 +16,42 @@
         </mat-form-field>
         <button mat-raised-button color="primary" (click)="performSearch()">Search</button>
     </div>
+    <div>
+        <label for="theme-select">Choose Theme:</label>
+        <select id="theme-select" (change)="onThemeChange($event)">
+      
+          <option value="theme-set-1">Theme 1</option>
+          <option value="theme-set-2">Theme 2</option>
+          <option value="theme-set-3">Theme 3</option>
+          <option value="theme-set-4">Theme 4</option>
+          <option value="theme-set-5">Theme 5</option>
+          <option value="theme-set-6">Theme 6</option>
+          <option value="theme-set-7">Theme 7</option>
+          <option value="theme-set-8">Theme 8</option>
+        </select>
+      </div>
+      
+      <div>
+        
+        <label for="font-select">Choose Font:</label>
+        <select id="font-select" (change)="onFontChange($event)">
+          <option value="Cormorant Garamond">Cormorant Garamond</option>
+          <option value="Play">Play</option>
+          <option value="Yuji Mai">Yuji Mai</option>
+          <option value="Outfit">outfit</option>
+          <option value="Ubuntu">ubuntu</option>
+        
+          <option value="Suravaram">suravaram</option>
+      
+        </select>
+        
+      </div>
+      
+ 
+
+      
+
+    
 
     <!-- User Details -->
     <button mat-icon-button class="user-details" (click)="navigateTo('/user-details')">
