@@ -67,7 +67,7 @@ export class CarouselComponent implements OnInit, OnDestroy {
   turfDetails: any[] = [];
   currentSlide = 0;
   autoplayInterval: any;
-  autoplaySpeed = 5000; // Speed of auto-switching slides (in ms)
+  autoplaySpeed = 3000; // Speed of auto-switching slides (in ms)
 
   constructor(private carouselService: CarouselService) {}
 

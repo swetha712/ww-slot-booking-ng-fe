@@ -26,7 +26,7 @@ import { Apiservice } from '../../services/apiservice.service';
 export class HeaderComponent implements OnInit {
   @Output() searchEvent = new EventEmitter<string>();
 
-  searchQuery: string = '';
+  searchQuery:string = '';
   themes: any[] = [];
   fonts: string[] = [];
   selectedTheme: string = '';

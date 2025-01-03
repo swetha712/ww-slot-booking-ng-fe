@@ -1,20 +1,3 @@
-<!-- <p>Carousel Component</p>
-<div class="carousel-container">
-  <ngx-slick-carousel class="carousel" [config]="carouselConfig">
-    <div *ngFor="let turf of turfDetails" class="carousel-item">
-      <mat-card>
-        <img mat-card-image [src]="turf.image1 || turf.image" alt="{{ turf.turfname }}">
-        <mat-card-title>{{ turf.turfname }}</mat-card-title>
-        <mat-card-subtitle>{{ turf.description }}</mat-card-subtitle>
-      </mat-card>
-    </div>
-  </ngx-slick-carousel>
-</div> -->
-
-
-
-
-
 <div class="carousel-container" (mouseover)="stopAutoplay()" (mouseout)="startAutoplay()">
   <div class="carousel-slides">
     <div
