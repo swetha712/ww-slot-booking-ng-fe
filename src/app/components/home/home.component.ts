@@ -7,11 +7,11 @@ import { HeaderComponent } from '../../header/header.component';
 import { CarouselComponent } from '../../carousel/carousel.component';
 import { BottomNavComponent } from '../../bottom-nav/bottom-nav.component';
 import { Apiservice } from '../../../services/apiservice.service';
-
+import { RouterModule, RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule,FormsModule,TurfCardComponent,HeaderComponent,CarouselComponent,BottomNavComponent],
+  imports: [CommonModule, FormsModule, CarouselComponent, RouterModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -21,7 +21,7 @@ turfDetails: any[] = [];
 filteredTurfs: any[] = [];
 searchMessage: string = '';
 
-constructor(private apiService: Apiservice) {}
+constructor(private apiService: Apiservice ,private router:RouterOutlet) {}
 
 ngOnInit(): void {
   this.apiService.getTurfDetails().subscribe((data) => {

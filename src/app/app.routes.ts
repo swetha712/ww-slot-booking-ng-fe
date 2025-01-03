@@ -10,6 +10,7 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { CourtdetailsComponent } from './courtdetails/courtdetails.component';
 import { BottomNavComponent } from './bottom-nav/bottom-nav.component';
 import { HomeComponent } from './components/home/home.component';
+import { SearchComponent } from './search/search.component';
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'profile', component: UserProfileComponent },
@@ -23,5 +24,3 @@ export const routes: Routes = [
     {path:'home',component:HomeComponent},
     {path:'user-details',component:UserDetailsComponent},
 ];
-
-  
