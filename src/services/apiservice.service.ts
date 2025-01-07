@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -53,43 +53,73 @@ updateLoggedInUser(updatedData: any): Observable<any> {
 loadBookedSlots(turfid:any):Observable<any> {
   return this.http.get<any[]>(`http://localhost:3000/turfdetails/${turfid}`);
 }
-bookSlot(turfId:any , courtno: number, newSlot: { date: string; slotno: number }): Observable<any> {
-return new Observable((observer) => {
-  // Get the turf details by ID
-  this.http.get<any>(`http://localhost:3000/turfdetails/${turfId}`).subscribe(
-    (turf: any) => {
-      // Find the relevant court in the turf
-      const court = turf.courts.find((c: any) => c.courtno === courtno);
+bookSlot(turfId: any, courtNo: number, newSlot: { date: string; slotno: number }): Observable<any> {
+  return new Observable((observer) => {
+    this.http.get<any>(`${this.turfUrl}/${turfId}`).subscribe(
+      (turf: any) => {
+        console.log('Fetched turf data:', turf); // Debug
 
-      if (!court) {
-        observer.error('Court not found');
-        return;
-      }
+        const court = turf.courts.find((c: any) => c.courtno === courtNo);
+        if (!court) {
+          observer.error('Court not found');
+          return;
+        }
 
-      // Check if the slot already exists
-      const isDuplicate = court.slots.some(
-        (slot: any) => slot.date === newSlot.date && slot.slotno === newSlot.slotno
-      );
+        console.log('Selected court:', court); // Debug
 
-      if (isDuplicate) {
-        observer.error('Slot already booked');
-      } else {
-        // Add the new slot to the court's slots array
-        court.slots.push(newSlot);
+        const isDuplicate = court.slots.some(
+          (slot: any) => slot.date === newSlot.date && slot.slotno === newSlot.slotno
+        );
 
-        // Update the turf details in the API
-        this.http
-          .patch(`http://localhost:3000/turfdetails/${turfId}`, { courts: turf.courts })
-          .subscribe(
-            (response) => observer.next(response),
-            (error) => observer.error(error)
-          );
-      }
-    },
-    (error) => observer.error(error)
-  );
-});
+        if (isDuplicate) {
+          observer.error('Slot already booked');
+        } else {
+          court.slots.push(newSlot);
+
+          // Update the turf details in the API
+          this.http
+            .patch(`${this.turfUrl}/${turfId}`, { courts: turf.courts })
+            .subscribe(
+              (response) => {
+                console.log('Slot booked successfully:', response); // Debug
+                observer.next(response);
+              },
+              (error) => observer.error(error)
+            );
+        }
+      },
+      (error) => observer.error(error)
+    );
+  });
 }
+
+
+getBookedSlot(turfId: number, courtNo: number, date: string, slotNo: number): Observable<any> {
+  return this.http.get<any>(`${this.turfUrl}/${turfId}`).pipe(
+    map((turf: any) => {
+      const court = turf.courts.find((c: any) => c.courtno === courtNo);
+      if (!court) {
+        throw new Error(`Court ${courtNo} not found`);
+      }
+
+      const bookedSlot = court.slots.find(
+        (slot: any) => slot.date === date && slot.slotno === slotNo
+      );
+      if (!bookedSlot) {
+        throw new Error(`Slot not found for date ${date} and slot number ${slotNo}`);
+      }
+
+      return {
+        turf,
+        court,
+        slot: bookedSlot,
+      };
+    })
+  );
+}
+
+
+
 }
   
 

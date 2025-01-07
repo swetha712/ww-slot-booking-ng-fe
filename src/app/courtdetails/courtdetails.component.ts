@@ -8,6 +8,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { Apiservice } from '../../services/apiservice.service';
+import { Router } from '@angular/router';
+import { BookingStateService } from '../bookingstate.service';
 
 @Component({
   selector: 'app-courtdetails',
@@ -37,9 +39,13 @@ throw new Error('Method not implemented.');
 slot: any;
 turfDetails: any;
 
-  constructor(private apiserv: Apiservice) {}
+  constructor(private apiserv: Apiservice,private router:Router,private bookingStateService: BookingStateService) {}
 
   ngOnInit(): void {
+    this.apiserv.loadBookedSlots(1).subscribe((turf: any) => {
+      console.log('Turf data fetched:', turf); // Debug log to verify data
+      this.turfDetails = turf; // Assign the fetched data to turfDetails
+    });  
     this.generateDateList();
     this.loadAvailableSlots();
   }
@@ -154,19 +160,23 @@ turfDetails: any;
       date: this.selectedDate,
       slotno: this.convertTimeToSlot(this.selectedSlot.label),
     };
-
-    this.apiserv.bookSlot(1,1,newSlot).subscribe(
-      (response) => {
-        this.selectedSlot.status = 'booked';
-        this.snackBar.open('Booked Successfully!','',{duration:2000}
-        );
-        this.loadAvailableSlots();
+  
+    this.bookingStateService.setState({
+      turfDetails: this.turfDetails,
+      slotDetails: {
+        date: this.selectedDate,
+        slotno: newSlot.slotno,
+        time: this.selectedSlot.label,
       },
-      (error) => {
-        this.snackBar.open('Slot already booked!', '', { duration: 2000 });
-      }
-    );
+    });
+    console.log('Turf Details=',this.turfDetails);
+  
+    this.router.navigate(['/orderdetails']);
   }
+  
+  
+  
+  
 
   convertTimeToSlot(label: string): number {
     const [time, period] = label.split(' ');
