@@ -54,7 +54,12 @@ section>div>div{
     display: flex;
     gap:20px;
 }
-
+.order-button{
+    background-color: var(--primary-color);
+    color:white;
+    margin:20px;
+    border-radius: 20px;
+}
 @media print {
     body {
       margin: 0;
