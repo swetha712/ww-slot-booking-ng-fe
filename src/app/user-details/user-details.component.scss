@@ -39,13 +39,15 @@
   }
   
   input:focus {
-    border-color: #007bff;
+    //border-color: #007bff;
+    border-color:var(--primary-color);
     outline: none;
   }
   
   button {
     padding: 14px;
-    background-color: #007bff;
+    //background-color: #007bff;
+    background-color: var(--primary-color);
     color: white;
     border: none;
     border-radius: 8px;
@@ -60,7 +62,7 @@
   }
   
   small {
-    color: #d9534f;
+    color: var(--primary-color);
     font-size: 0.85rem;
   }
   

@@ -15,7 +15,7 @@ export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'profile', component: UserProfileComponent },
     { path: 'edit-profile', component: UserDetailsComponent },
-    {path:'turfdetails',component:TurfComponent},
+    { path: 'turfdetails/:id', component: TurfComponent },
     {path:'orderdetails',component:OrderDetailsComponent},
     {path :'login',component:UserAuthComponent},
     {path:'court',component:CourtdetailsComponent},

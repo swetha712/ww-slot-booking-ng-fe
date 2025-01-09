@@ -1,11 +1,7 @@
 <div class="turf-detail">
-  <!-- Full-size auto-scrollable carousel -->
+  <!-- Full-size Auto-Scrollable Carousel -->
   <div class="carousel">
-    <img
-      [src]="turfDetails?.images?.[currentImageIndex]"
-      alt="Carousel Image"
-      class="carousel-image"
-    />
+    <img [src]="turfDetails?.images?.[currentImageIndex]" alt="Carousel Image" class="carousel-image" />
   </div>
 
   <!-- Turf Information Accordion -->
@@ -14,19 +10,31 @@
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
-          <h2>{{ turfDetails.turfname }}</h2>
+          <h2>{{ turfDetails?.turfname }}</h2>
         </mat-panel-title>
       </mat-expansion-panel-header>
       <div class="turf-info">
-        <p>{{ turfDetails.description }}</p>
-        <p><mat-icon>location_on</mat-icon> <strong>LOCATION:</strong> {{ turfDetails.location }}</p>
-        <p><mat-icon>person</mat-icon> <strong>OWNER:</strong> {{ turfDetails.ownername }}</p>
-        <p><mat-icon>sports_tennis</mat-icon> <strong>NUMBER OF COURTS:</strong><b> {{ turfDetails.courtcount }}</b></p>
+        <p>{{ turfDetails?.description }}</p>
+        <p>
+          <mat-icon>location_on</mat-icon>
+          <strong>LOCATION:</strong>
+          {{ turfDetails?.location }}
+        </p>
+        <p>
+          <mat-icon>person</mat-icon>
+          <strong>OWNER:</strong>
+          {{ turfDetails?.ownername }}
+        </p>
+        <p>
+          <mat-icon>sports_tennis</mat-icon>
+          <strong>NUMBER OF COURTS:</strong>
+          <b>{{ turfDetails?.courtcount }}</b>
+        </p>
       </div>
     </mat-expansion-panel>
 
     <!-- Amenities Accordion -->
-    <mat-expansion-panel>
+    <mat-expansion-panel *ngIf="amenities?.length">
       <mat-expansion-panel-header>
         <mat-panel-title>
           <strong>AMENITIES</strong>
@@ -41,7 +49,7 @@
     </mat-expansion-panel>
 
     <!-- Includes Accordion -->
-    <mat-expansion-panel>
+    <mat-expansion-panel *ngIf="includes?.length">
       <mat-expansion-panel-header>
         <mat-panel-title>
           <strong>INCLUDES</strong>
@@ -56,7 +64,7 @@
     </mat-expansion-panel>
 
     <!-- Gallery Accordion -->
-    <mat-expansion-panel>
+    <mat-expansion-panel *ngIf="galleryImages?.length">
       <mat-expansion-panel-header>
         <mat-panel-title>
           <strong>GALLERY</strong>
@@ -64,29 +72,20 @@
       </mat-expansion-panel-header>
       <div class="gallery">
         <div class="gallery-images">
-          <img
-            *ngFor="let image of galleryImages; let i = index"
-            [src]="image"
-            alt="Gallery Image"
-            class="gallery-image"
-            [class.active]="i === galleryCurrentIndex"
-          />
+          <img *ngFor="let image of galleryImages; let i = index" [src]="image" alt="Gallery Image"
+            class="gallery-image" [class.active]="i === galleryCurrentIndex" />
         </div>
       </div>
     </mat-expansion-panel>
   </mat-accordion>
 
   <!-- Court Selection -->
-  <div class="court-selection">
+  <div *ngIf="courtDetails?.length" class="court-selection">
     <h3>Select a Court</h3>
     <div class="courts">
-      <div
-        class="court"
-        *ngFor="let court of courtDetails"
-        [class.selected]="selectedCourt?.id === court.id"
-        (click)="selectCourt(court)"
-      >
-        <img [src]="court.image" alt="Court Image" class="court-image" />
+      <div class="court" *ngFor="let court of courtDetails" [class.selected]="selectedCourt?.id === court.id"
+        (click)="selectCourt(court)">
+        <img [src]="court.image" alt="{{ court.name }}" class="court-image" />
         <span>{{ court.name }}</span>
       </div>
     </div>
@@ -94,13 +93,8 @@
 
   <!-- Book Now Button -->
   <div class="book-now-button">
-    <button
-      [disabled]="!selectedCourt"
-      (click)="bookNow()"
-    >
+    <button mat-raised-button color="accent" [disabled]="!selectedCourt" (click)="bookNow()">
       Book Now
     </button>
   </div>
 </div>
-
-
