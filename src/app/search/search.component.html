@@ -1,21 +1,32 @@
-<div class="search-container">
-  <!-- Search Bar -->
-  <mat-form-field appearance="outline" class="search-input">
-    <input
-      matInput
-      [(ngModel)]="searchQuery"
-      (input)="filterTurfs()"
-      placeholder="Search Turf Name"
-    />
-  </mat-form-field>
 
-  <!-- Turf List -->
-  <div class="turf-list">
+
+
+  <!-- <div class="turf-list">
     <mat-card *ngFor="let turf of filteredTurfs" class="turf-card">
       <img mat-card-image [src]="turf.image" alt="{{ turf.turfname }}" />
       <mat-card-title>{{ turf.turfname }}</mat-card-title>
       <mat-card-subtitle>{{ turf.description }}</mat-card-subtitle>
     </mat-card>
+  </div> -->
+
+
+  <div class="turf-container">
+    <ng-container *ngIf="filteredTurfs.length > 0; else noResults">
+      <mat-card *ngFor="let turf of filteredTurfs" class="turf-card">
+        <mat-card-header>
+          <mat-card-title>{{ turf.turfname }}</mat-card-title>
+          <mat-card-subtitle>{{ turf.ownername }}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="turf.image1" alt="{{ turf.turfname }}" />
+        <mat-card-content>
+          <p>{{ turf.description }}</p>
+        </mat-card-content>
+      </mat-card>
+    </ng-container>
+
+    <ng-template #noResults>
+      <p>No turfs found matching your search.</p>
+    </ng-template>
   </div>
-</div>
+
 

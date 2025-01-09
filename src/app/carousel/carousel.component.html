@@ -5,10 +5,18 @@
       *ngFor="let turf of turfDetails || []; let i = index"
       [ngClass]="{ 'active': i === currentSlide }"
     >
+      <!-- Turf Image -->
       <img [src]="turf.image1" alt="{{ turf.turfname }}" />
+
+      <!-- Slide Content -->
       <div class="slide-content">
-        <h3>{{ turf.turfname }}</h3>
-        <p>{{ turf.description }}</p>
+        <!-- Turf Name -->
+        <h3 class="turf-name">{{ turf.turfname }}</h3>
+
+        <!-- Turf Description -->
+        <p class="turf-description">{{ turf.description }}</p>
+
+        <!-- Action Button -->
         <a href="#" class="button">Explore Now</a>
       </div>
     </div>
@@ -27,3 +35,8 @@
     ></span>
   </div>
 </div>
+
+
+
+
+

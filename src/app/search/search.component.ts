@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, inject, OnInit } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { Apiservice } from '../../services/apiservice.service';
+import { catchError, of } from 'rxjs';
 
 @Component({
   selector: 'app-search',
@@ -21,40 +22,38 @@ import { ActivatedRoute } from '@angular/router';
   ],
 })
 export class SearchComponent implements OnInit {
-  turfList: any[] = []; // Complete list of turf details
-  filteredTurfs: any[] = []; // Filtered turfs based on search
-  searchQuery: string = ''; // Two-way binding for search input
+  turfs: any[] = [];
+  filteredTurfs: any[] = [];
+  query: string = '';
 
-  constructor(private http: HttpClient, private route: ActivatedRoute) {}
+  apiService = inject(Apiservice);
+  route = inject(ActivatedRoute);
 
   ngOnInit(): void {
-    this.fetchTurfData();
     this.route.queryParams.subscribe((params) => {
-      if (params['q']) {
-        this.searchQuery = params['q'];
-        this.filterTurfs(); // Apply search on initialization
-      }
+      this.query = params['q'] || '';
+      this.fetchTurfs();
     });
   }
 
-  // Fetch turf data from db.json
-  private fetchTurfData(): void {
-    this.http.get<any[]>('http://localhost:3000/turfs').subscribe(
-      (data) => {
-        this.turfList = data;
-        this.filteredTurfs = data; // Initially show all turfs
-      },
-      (error) => {
-        console.error('Error fetching turf data:', error);
-      }
-    );
+  fetchTurfs(): void {
+    this.apiService
+      .getTurfDetails()
+      .pipe(
+        catchError((error: any) => {
+          console.error('Error fetching turfs:', error);
+          return of([]);
+        })
+      )
+      .subscribe((data) => {
+        this.turfs = data;
+        this.filterTurfs();
+      });
   }
 
-  // Filter turfs based on search query
   filterTurfs(): void {
-    const query = this.searchQuery.toLowerCase();
-    this.filteredTurfs = this.turfList.filter((turf) =>
-      turf.turfname.toLowerCase().includes(query)
+    this.filteredTurfs = this.turfs.filter((turf) =>
+      turf.turfname.toLowerCase().includes(this.query.toLowerCase())
     );
   }
 }
