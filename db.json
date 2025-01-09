@@ -34,6 +34,20 @@
       "Email": "severus@gmail.com",
       "phone": 7019834782,
       "password": "severus@123"
+    },
+    {
+      "id": "ec12",
+      "name": "",
+      "Email": "",
+      "phone": "",
+      "password": ""
+    },
+    {
+      "id": "1d99",
+      "name": "jai",
+      "Email": "jai@gmail.com",
+      "phone": 8015107876,
+      "password": "jai"
     }
   ],
   "turfdetails": [
