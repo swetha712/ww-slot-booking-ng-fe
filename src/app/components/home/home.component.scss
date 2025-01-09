@@ -46,6 +46,7 @@ margin-top: 10px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  background-color: var(--primary-color);
 
   img {
     width: 100%;
@@ -71,6 +72,10 @@ margin-top: 10px;
       display: flex;
       justify-content: space-between;
       margin-top: 16px;
+    }
+    .card-button{
+      background-color: var(--secondary-color);
+      color:white;
     }
   }
 }

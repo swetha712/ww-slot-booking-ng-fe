@@ -2,6 +2,7 @@
   <!-- App Logo -->
   <div class="logo">
     <img src="https://cdn.produkto.io/66dee758ded95d25bd809de2/turf-masters.jpeg" alt="App Logo" />
+    <img src="#" alt="App Logo" />
   </div>
 
   <!-- Search Bar -->
@@ -42,6 +43,41 @@
     </select>
   </div>
 
+      <button mat-icon-button (click)="performSearch()">
+        <mat-icon>search</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+  
+
+  <!-- Theme Selection Dropdown -->
+  <div>
+    <mat-icon [matMenuTriggerFor]="themeMenu">format_color_fill</mat-icon>
+    <mat-menu #themeMenu="matMenu">
+      <button mat-menu-item (click)="onThemeChange($event, 'theme-set-1')">Theme 1</button>
+      <button mat-menu-item (click)="onThemeChange($event, 'theme-set-2')">Theme 2</button>
+      <button mat-menu-item (click)="onThemeChange($event, 'theme-set-3')">Theme 3</button>
+      <button mat-menu-item (click)="onThemeChange($event, 'theme-set-4')">Theme 4</button>
+      <button mat-menu-item (click)="onThemeChange($event, 'theme-set-5')">Theme 5</button>
+      <button mat-menu-item (click)="onThemeChange($event, 'theme-set-6')">Theme 6</button>
+      <button mat-menu-item (click)="onThemeChange($event, 'theme-set-7')">Theme 7</button>
+      <button mat-menu-item (click)="onThemeChange($event, 'theme-set-8')">Theme 8</button>
+    </mat-menu>
+  </div>
+
+  <!-- Font Selection Dropdown -->
+  <div>
+    <mat-icon [matMenuTriggerFor]="fontMenu">font_download</mat-icon>
+    <mat-menu #fontMenu="matMenu">
+      <button mat-menu-item (click)="onFontChange($event, 'Cormorant Garamond')">Cormorant Garamond</button>
+      <button mat-menu-item (click)="onFontChange($event, 'Play')">Play</button>
+      <button mat-menu-item (click)="onFontChange($event, 'Yuji Mai')">Yuji Mai</button>
+      <button mat-menu-item (click)="onFontChange($event, 'Outfit')">Outfit</button>
+      <button mat-menu-item (click)="onFontChange($event, 'Ubuntu')">Ubuntu</button>
+      <button mat-menu-item (click)="onFontChange($event, 'Suravaram')">Suravaram</button>
+    </mat-menu>
+  </div>
+  
   <!-- User Details -->
   <button mat-icon-button class="user-details" (click)="navigateTo('/user-details')">
     <mat-icon>account_circle</mat-icon>
