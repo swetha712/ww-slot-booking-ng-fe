@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #1976d2; // Primary theme color
+  background-color: var(--primary-color); // Primary theme color
   color: #fff;
   padding: 0 16px;
 
@@ -30,14 +30,16 @@
     align-items: center;
     flex: 1;
     margin: 0 16px;
+    
 
     mat-form-field {
       flex: 1;
       margin-right: 8px;
+     
 
       input {
         color: #000;
-        background-color: #fff;
+        background-color:var(--primary-color);
         padding: 4px 8px;
         border-radius: 4px;
       }
@@ -46,6 +48,7 @@
     button {
       height: 36px;
       min-width: 64px;
+      
     }
   }
 
@@ -65,6 +68,7 @@
     margin-right: 8px;
     font-size: 14px;
     color: #fff;
+    
   }
 
   hr {
@@ -99,18 +103,37 @@
   // Add responsiveness
   @media (max-width: 768px) {
     flex-wrap: wrap;
+    justify-content: center;
+
+    .menu-icon {
+      order: 1; // Move the menu icon to the top on mobile view
+      margin: 8px 0;
+    }
+
+    .logo {
+      order: 2; // Keep logo on top after the menu icon
+      margin: 8px 0;
+      flex: 1;
+      justify-content: center;
+
+      img {
+        height: 30px; // Adjust the logo size for mobile
+      }
+    }
 
     .search-bar {
       flex-direction: column;
       margin: 8px 0;
+      width: 100%; // Ensure search bar takes full width
 
       mat-form-field {
         margin: 0 0 8px 0;
-        width: 100%;
+        width: 100%; // Allow form field to stretch to full width
       }
 
       button {
-        width: 100%;
+        width: 100%; // Ensure button takes full width on small screens
+        margin-top: 8px;
       }
     }
 
@@ -119,10 +142,42 @@
       margin: 8px 0;
     }
 
-    .menu-icon,
     .user-details,
     .user-records {
       margin-bottom: 8px;
+    }
+
+    .user-records,
+    .user-details {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin: 8px 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .menu-icon {
+      font-size: 20px; // Adjust icon size for smaller screens
+    }
+
+    .search-bar {
+      mat-form-field {
+        margin: 0 0 4px 0; // Tighten the space around the input field
+      }
+
+      button {
+        height: 40px; // Adjust button size for better touch interaction
+      }
+    }
+
+    .logo img {
+      height: 25px; // Further reduce the logo size on very small screens
+    }
+
+    .user-details,
+    .user-records {
+      font-size: 12px; // Decrease font size for better fitting on small screens
     }
   }
 }

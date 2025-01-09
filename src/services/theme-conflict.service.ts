@@ -4,8 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ThemeConflictService {
-  private primaryColors = ['#60b4da', '#167ed2', '#3f7eca', '#7c51eb', '#428376', '#826f5d', '#C6C6C6', '#00FFFF'];
-  private secondaryColors = ['#314560', '#b360f3', '#1b83eb', '#483469', '#487149', '#ffa500', '#DDE1E9', '#BB86FC'];
+  private primaryColors = ['#60b4da', '#ed96f7', '#3f7eca', '#7c51eb', '#428376', '#826F5D', '#C6C6C6', '#d2b3f9'];
+  private secondaryColors = ['#314560', '#b360f3', '#1b83eb', '#483469', '#487149', '#a88e75', '#DDE1E9', '#BB86FC'];
   private textColors = ['#E4F2FD', '#06bbd2', '#7aa0ca', '#522fa4', '#5d985f', '#f3dbc2', '#5F7285', '#EDEDED'];
   private backgroundColors = ['#266789', '#e4f2fd', '#c5effc', '#EEE8F6', '#f1f7e9', '#121212', '#EBECF0', '#121212'];
   private successColors = ['#8af28f', '#66bb6a', '#afd9b3', '#80cbc4', '#66bb6a', '#3e581b', '#E8E9EF', '#03DAC6'];

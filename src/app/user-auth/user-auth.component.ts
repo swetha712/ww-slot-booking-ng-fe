@@ -55,7 +55,7 @@ export class UserAuthComponent {
         console.log('Login successful for user:', user);
         this.apiservice.setCurrentUser(user); 
         console.log('Current User',user.name,user.password);
-        this.router.navigate(['/turfdetails']);
+        this.router.navigate(['/home']);
       } else {
         console.warn('User not found. Please register.');
         this.authError = 'User not found! Please register.';
