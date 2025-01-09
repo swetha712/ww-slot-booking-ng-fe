@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { ThemeConflictService } from '../../services/theme-conflict.service';
 import { ThemeService } from '../../services/theme.service';
 import { Apiservice } from '../../services/apiservice.service';
+import { MatMenuModule } from '@angular/material/menu';
 
 @Component({
   selector: 'app-header',
@@ -20,6 +21,7 @@ import { Apiservice } from '../../services/apiservice.service';
     MatButtonModule,
     MatInputModule,
     FormsModule,
+    MatMenuModule
   ],
   providers: [ThemeConflictService, ThemeService, Apiservice],
 })
@@ -70,9 +72,9 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/search'], { queryParams: { q: this.searchQuery } });
   }
 
-  onThemeChange(event: Event) {
-    const target = event.target as HTMLSelectElement;
-    const themeName = target.value;
+  onThemeChange(event: Event,themeName:string):void {
+    //const target = event.target as HTMLSelectElement;
+    //const themeName = target.value;
     this.selectedTheme = themeName;
 
     const themeDetails = this.themeConflictService.getThemeByName(themeName);
@@ -85,9 +87,9 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  onFontChange(event: Event) {
-    const target = event.target as HTMLSelectElement;
-    const fontName = target.value;
+  onFontChange(event: Event,fontName:string):void {
+    //const target = event.target as HTMLSelectElement;
+    //const fontName = target.value;
     this.selectedFont = fontName;
     this.currentFont = fontName; // Update currentFont when the font changes
     this.themeService.switchFont(fontName);

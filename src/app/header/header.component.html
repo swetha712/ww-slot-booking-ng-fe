@@ -1,67 +1,51 @@
 <mat-toolbar class="header-container">
-    <!-- Menu Icon -->
-    <!-- <button mat-icon-button class="menu-icon" (click)="navigateTo('/menu')">
-        <mat-icon>☰</mat-icon>
-    </button> -->
+  <!-- App Logo -->
+  <div class="logo">
+    <img src="#" alt="App Logo" />
+  </div>
 
-    <!-- App Logo -->
-    <div class="logo">
-        <img src="#" alt="App Logo" />
-    </div>
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <mat-form-field>
+      <input matInput [(ngModel)]="searchQuery" placeholder="Search Turf Name" />
+      <button mat-icon-button (click)="performSearch()">
+        <mat-icon>search</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+  
 
-    <!-- Search Bar -->
-    <div class="search-bar">
-        <mat-form-field>
-            <input matInput [(ngModel)]="searchQuery" placeholder="Search Turf Name" />
-        </mat-form-field>
-        <button mat-raised-button color="primary" (click)="performSearch()">Search</button>
-    </div>
-    <div>
-        <label for="theme-select">Theme:</label>
-        <select id="theme-select" (change)="onThemeChange($event)">
-      
-          <option value="theme-set-1">Theme 1</option>
-          <option value="theme-set-2">Theme 2</option>
-          <option value="theme-set-3">Theme 3</option>
-          <option value="theme-set-4">Theme 4</option>
-          <option value="theme-set-5">Theme 5</option>
-          <option value="theme-set-6">Theme 6</option>
-          <option value="theme-set-7">Theme 7</option>
-          <option value="theme-set-8">Theme 8</option>
-        </select>
-      </div>
-      
-      <div>
-        
-        <label for="font-select">Font:</label>
-        <select id="font-select" (change)="onFontChange($event)">
-          <option value="Cormorant Garamond">Cormorant Garamond</option>
-          <option value="Play">Play</option>
-          <option value="Yuji Mai">Yuji Mai</option>
-          <option value="Outfit">outfit</option>
-          <option value="Ubuntu">ubuntu</option>
-        
-          <option value="Suravaram">suravaram</option>
-      
-        </select>
-        
-      </div>
-      
- 
+  <!-- Theme Selection Dropdown -->
+  <div>
+    <mat-icon [matMenuTriggerFor]="themeMenu">format_color_fill</mat-icon>
+    <mat-menu #themeMenu="matMenu">
+      <button mat-menu-item (click)="onThemeChange($event, 'theme-set-1')">Theme 1</button>
+      <button mat-menu-item (click)="onThemeChange($event, 'theme-set-2')">Theme 2</button>
+      <button mat-menu-item (click)="onThemeChange($event, 'theme-set-3')">Theme 3</button>
+      <button mat-menu-item (click)="onThemeChange($event, 'theme-set-4')">Theme 4</button>
+      <button mat-menu-item (click)="onThemeChange($event, 'theme-set-5')">Theme 5</button>
+      <button mat-menu-item (click)="onThemeChange($event, 'theme-set-6')">Theme 6</button>
+      <button mat-menu-item (click)="onThemeChange($event, 'theme-set-7')">Theme 7</button>
+      <button mat-menu-item (click)="onThemeChange($event, 'theme-set-8')">Theme 8</button>
+    </mat-menu>
+  </div>
 
-      
+  <!-- Font Selection Dropdown -->
+  <div>
+    <mat-icon [matMenuTriggerFor]="fontMenu">font_download</mat-icon>
+    <mat-menu #fontMenu="matMenu">
+      <button mat-menu-item (click)="onFontChange($event, 'Cormorant Garamond')">Cormorant Garamond</button>
+      <button mat-menu-item (click)="onFontChange($event, 'Play')">Play</button>
+      <button mat-menu-item (click)="onFontChange($event, 'Yuji Mai')">Yuji Mai</button>
+      <button mat-menu-item (click)="onFontChange($event, 'Outfit')">Outfit</button>
+      <button mat-menu-item (click)="onFontChange($event, 'Ubuntu')">Ubuntu</button>
+      <button mat-menu-item (click)="onFontChange($event, 'Suravaram')">Suravaram</button>
+    </mat-menu>
+  </div>
+  
 
-    
-
-    <!-- User Details -->
-    <button mat-icon-button class="user-details" (click)="navigateTo('/user-details')">
-        <mat-icon>account_circle</mat-icon>
-        <!-- <span></span> -->
-    </button>
-
-    <!-- User Records -->
-    <!-- <button mat-icon-button class="user-records" (click)="navigateTo('/user-record')">
-        <mat-icon>library_books</mat-icon> -->
-        <!-- <span>User Records</span> -->
-    <!-- </button> -->
+  <!-- User Details -->
+  <button mat-icon-button class="user-details" (click)="navigateTo('/user-details')">
+    <mat-icon>account_circle</mat-icon>
+  </button>
 </mat-toolbar>
