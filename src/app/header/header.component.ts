@@ -63,9 +63,11 @@ export class HeaderComponent implements OnInit {
     this.router.navigate([route]);
   }
 
+
   performSearch(): void {
     console.log(`Searching for: ${this.searchQuery}`);
-    this.searchEvent.emit(this.searchQuery);
+    // Navigate to the search component and pass the searchQuery as a query parameter
+    this.router.navigate(['/search'], { queryParams: { q: this.searchQuery } });
   }
 
   onThemeChange(event: Event) {

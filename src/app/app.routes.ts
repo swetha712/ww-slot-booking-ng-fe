@@ -23,4 +23,5 @@ export const routes: Routes = [
     {path:'carousel',component:CarouselComponent},
     {path:'home',component:HomeComponent},
     {path:'user-details',component:UserDetailsComponent},
+    {path:'search',component:SearchComponent}
 ];
