@@ -1,6 +1,7 @@
 <mat-toolbar class="header-container">
   <!-- App Logo -->
   <div class="logo">
+    <img src="https://cdn.produkto.io/66dee758ded95d25bd809de2/turf-masters.jpeg" alt="App Logo" />
     <img src="#" alt="App Logo" />
   </div>
 
@@ -8,6 +9,40 @@
   <div class="search-bar">
     <mat-form-field>
       <input matInput [(ngModel)]="searchQuery" placeholder="Search Turf Name" />
+    </mat-form-field>
+    <button mat-icon-button (click)="performSearch()">
+      <mat-icon fontIcon="search"></mat-icon>
+    </button>
+  </div>
+
+  <!-- Theme Selector -->
+  <div class="theme-selector">
+    <label for="theme-select">Theme:</label>
+    <select id="theme-select" (change)="onThemeChange($event)">
+      <option value="theme-set-1">Theme 1</option>
+      <option value="theme-set-2">Theme 2</option>
+      <option value="theme-set-3">Theme 3</option>
+      <option value="theme-set-4">Theme 4</option>
+      <option value="theme-set-5">Theme 5</option>
+      <option value="theme-set-6">Theme 6</option>
+      <option value="theme-set-7">Theme 7</option>
+      <option value="theme-set-8">Theme 8</option>
+    </select>
+  </div>
+
+  <!-- Font Selector -->
+  <div class="font-selector">
+    <label for="font-select">Font:</label>
+    <select id="font-select" (change)="onFontChange($event)">
+      <option value="Cormorant Garamond">Cormorant Garamond</option>
+      <option value="Play">Play</option>
+      <option value="Yuji Mai">Yuji Mai</option>
+      <option value="Outfit">Outfit</option>
+      <option value="Ubuntu">Ubuntu</option>
+      <option value="Suravaram">Suravaram</option>
+    </select>
+  </div>
+
       <button mat-icon-button (click)="performSearch()">
         <mat-icon>search</mat-icon>
       </button>
@@ -43,9 +78,9 @@
     </mat-menu>
   </div>
   
-
   <!-- User Details -->
   <button mat-icon-button class="user-details" (click)="navigateTo('/user-details')">
     <mat-icon>account_circle</mat-icon>
   </button>
 </mat-toolbar>
+
