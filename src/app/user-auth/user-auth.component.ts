@@ -32,7 +32,7 @@ export class UserAuthComponent {
     this.apiservice.addUser(userDetails).subscribe(
       () => {
         console.log('New user added:', userDetails);
-        this.apiservice.setCurrentUser(userDetails); 
+        this.apiservice.setCurrentUser(userDetails);
         console.log('Current User',userDetails);
         this.router.navigate(['./turfdetails']);
       },
@@ -53,7 +53,7 @@ export class UserAuthComponent {
 
       if (user) {
         console.log('Login successful for user:', user);
-        this.apiservice.setCurrentUser(user); 
+        this.apiservice.setCurrentUser(user);
         console.log('Current User',user.name,user.password);
         this.router.navigate(['/home']);
       } else {

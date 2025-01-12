@@ -1,5 +1,5 @@
 header{
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     text-align: center;
     svg{
         width:30px;
@@ -9,7 +9,7 @@ header{
         cursor: pointer;
     }
     padding:20px;
-    color: rgb(34, 29, 29);
+    color: rgb(243, 243, 243);
     font-weight:800;
 }
 .order_idDetails{
@@ -17,9 +17,9 @@ header{
     justify-content: space-around;
 }
 section{
-    background-color:var(--secondary-color);
-    color: white;
-    box-shadow:2px 2px 10px var(--primary-color);
+    background-color:var(--primary-color);
+    color: rgb(255, 255, 255);
+    box-shadow:2px 2px 10px var(--secondary-color);
     padding:1rem;
     margin:0.5rem;
     border-radius:10px;
