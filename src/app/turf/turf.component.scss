@@ -15,26 +15,27 @@
 mat-expansion-panel {
  // background-color: #76f9f3; 
  background-color: var(--primary-color);
-  color:var(--text-color); 
+  color: #ffffff; 
   border: 1px solid #ddd;
   border-radius: 8px;
   margin-bottom: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
   
-  &:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  }
-}
+//   &:hover {
+//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+//   }
+ }
+
 mat-expansion-panel-header {
   background-color: var(--secondary-color); 
   font-weight: bold;
   border-bottom: 1px solid #ddd;
 
 
-  &:hover {
-    background-color: var(--secondary-color);
-  }
+  // &:hover {
+  //   background-color: var(--secondary-color);
+  // }
 }
 
 .mat-expansion-panel-body {

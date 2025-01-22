@@ -72,28 +72,41 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/search'], { queryParams: { q: this.searchQuery } });
   }
 
-  onThemeChange(event: Event,themeName:string):void {
-    //const target = event.target as HTMLSelectElement;
-    //const themeName = target.value;
+  onThemeChange(input: Event | string): void {
+    let themeName: string;
+    if (typeof input === 'string') {
+      themeName = input;
+    } else {
+      const event = input as Event;
+      themeName = (event.target as HTMLSelectElement).value;
+    }
     this.selectedTheme = themeName;
-
+  
     const themeDetails = this.themeConflictService.getThemeByName(themeName);
     if (themeDetails) {
-      this.fonts = themeDetails.fonts; // Update fonts for the new theme
-      this.selectedFont = this.fonts[0]; // Default to the first font
-      this.currentFont = this.selectedFont; // Update currentFont
+      this.fonts = themeDetails.fonts;
+      this.selectedFont = this.fonts[0];
+      this.currentFont = this.selectedFont;
       this.themeService.switchTheme(themeName);
       this.themeService.switchFont(this.selectedFont);
     }
   }
-
-  onFontChange(event: Event,fontName:string):void {
-    //const target = event.target as HTMLSelectElement;
-    //const fontName = target.value;
+  
+  onFontChange(input: Event | string): void {
+    let fontName: string;
+  
+    if (typeof input === 'string') {
+      fontName = input;
+    } else {
+      const event = input as Event;
+      fontName = (event.target as HTMLSelectElement).value;
+    }
+  
     this.selectedFont = fontName;
-    this.currentFont = fontName; // Update currentFont when the font changes
+    this.currentFont = fontName;
     this.themeService.switchFont(fontName);
   }
+  
 
   toggleTheme() {
     const currentIndex = this.themes.findIndex(
