@@ -10,8 +10,9 @@ export class Apiservice {
   getOrdersByUser(id: any) {
     throw new Error('Method not implemented.');
   }
-  private apiUrl ='http://localhost:3000/userinfo';
-private turfUrl ='http://localhost:3000/turfdetails'
+  private baseurl='https://mocki.io/v1/ec6d9494-2fe7-4180-b362-ba9eefdf5f61';
+  private apiUrl =' https://mocki.io/v1/38b01a62-0053-44e8-8cc4-8a274b07f9d4';
+private turfUrl =' https://mocki.io/v1/5e93601b-87af-4150-bdc7-b27c4f1e1acc'
 private currentUserSubject = new BehaviorSubject<any>(null);
 private loginurl ='http://localhost:3000/logged-in'
   constructor(private http:HttpClient) {}
@@ -21,7 +22,7 @@ private loginurl ='http://localhost:3000/logged-in'
   getTurfDetails(): Observable<any> {
     return this.http.get<any>(this.turfUrl);
   }
-  
+
 
   addUser(userDetails: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, userDetails);
@@ -51,7 +52,7 @@ updateLoggedInUser(updatedData: any): Observable<any> {
   return this.http.put<any>(this.loginurl, updatedData); // Ensure API updates the correct logged-in data
 }
 loadBookedSlots(turfid:any):Observable<any> {
-  return this.http.get<any[]>(`http://localhost:3000/turfdetails/${turfid}`);
+  return this.http.get<any[]>(` https://mocki.io/v1/5e93601b-87af-4150-bdc7-b27c4f1e1acc/${turfid}`);
 }
 bookSlot(turfId: any, courtNo: number, newSlot: { date: string; slotno: number }): Observable<any> {
   return new Observable((observer) => {
@@ -118,8 +119,12 @@ getBookedSlot(turfId: number, courtNo: number, date: string, slotNo: number): Ob
   );
 }
 
+getExample(){
+  return this.http.get<any>(`${this.baseurl}`);
+}
+
 
 
 }
-  
+
 

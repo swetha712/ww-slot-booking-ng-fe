@@ -21,13 +21,21 @@ turfDetails: any[] = [];
 filteredTurfs: any[] = [];
 searchMessage: string = '';
 
+sample:any[]=[];
+
+
 constructor(private apiService: Apiservice ,private router:RouterOutlet) {}
 
 ngOnInit(): void {
   this.apiService.getTurfDetails().subscribe((data) => {
     this.turfDetails = data;
+    console.log('turfdetails=======',this.turfDetails);
     this.filteredTurfs = this.turfDetails.slice(0, 4);
   });
+
+  this.apiService.getExample().subscribe((data)=>{
+    this.sample=data;
+  })
 }
 
 onSearch(query: string): void {
