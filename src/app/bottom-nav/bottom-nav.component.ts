@@ -13,11 +13,18 @@ import { MatIconModule } from '@angular/material/icon';
 export class BottomNavComponent {
   isHidden = false;
   private lastScrollY = 0;
+  searchQuery:string = '';
 
   constructor(private router: Router) {}
 
   navigateTo(route: string): void {
     this.router.navigate([route]);
+  }
+
+  performSearch(): void {
+    console.log(`Searching for: ${this.searchQuery}`);
+    // Navigate to the search component and pass the searchQuery as a query parameter
+    this.router.navigate(['/search'], { queryParams: { q: this.searchQuery } });
   }
 
   @HostListener('window:scroll', [])

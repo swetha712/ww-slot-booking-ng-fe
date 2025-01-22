@@ -1,249 +1,73 @@
-
-.header-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: var(--primary-color); // Primary theme color
-  color: #fff;
-  padding: 0.5rem 1rem;
-  position: fixed;
-  z-index: 1;
-}
-  .menu-icon {
-    color: #fff;
-    mat-icon {
-      font-size: 4px;
-    }
-  }
-
-  .logo img {
-    height: 50px;
-    border-radius: 100px;
-  }
-
-
-  // .search-bar mat-form-field {
-  //   width: 100%;
-  //   height: 90%;
-  // }
-
-  .search-bar input {
-    height: 90%;
-    // border-radius: 30px;
-    padding: 5px;
-  .search-bar {
-    display: flex;
-    align-items: center;
-    flex: 1;
-    margin: 0 16px;
-    // border-radius: 40px;
-    
-
-    mat-form-field {
-      flex: 1;
-      margin-right: 8px;
-     
-
-      input {
-        color: #000;
-        background-color:var(--primary-color);
-        padding: 4px 8px;
-        border-radius: 60px;
-      }
-    }
-
-    button {
-      height: 36px;
-      min-width: 64px;
-      
-    }
-  }
-
-  // .search-bar button {
-  //   height: 90%;
-  //   margin-left: 1rem;
-  // }
-
-  select {
-    padding: 0.375rem 0.75rem;
-    border-radius: 0.375rem;
-    border: none;
-    font-size: 16px;
-  }
-
-  label {
-    margin-right: 0.5rem;
-    color: #fff;
-    font-size: 16px
-  }
-
-  .user-details mat-icon {
-    font-size: 14px;
-  }
-
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .col-auto, .col-md-auto, .col-12, .col-6 {
-    flex: 1 1 auto;
-    padding: 0.5rem;
-    text-align: center;
-  }
-
-  .search-bar {
-    display: flex;
-    flex: 1 1 auto;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .container-fluid {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-
-  .form-select, .btn, mat-form-field, mat-icon-button {
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0.25rem;
-    justify-content: center;
-
-    .menu-icon {
-      order: 1; // Move the menu icon to the top on mobile view
-      margin: 8px 0;
-    }
-
-    .logo {
-      order: 2; // Keep logo on top after the menu icon
-      margin: 8px 0;
-      flex: 1;
-      justify-content: center;
-
-      img {
-        height: 30px; // Adjust the logo size for mobile
-      }
-    }
-
-    .search-bar {
-      flex-direction: column;
-      margin: 8px 0;
-      width: 100%; // Ensure search bar takes full width
-
-      mat-form-field {
-        margin: 0 0 8px 0;
-        width: 100%; // Allow form field to stretch to full width
-      }
-
-      button {
-        width: 100%; // Ensure button takes full width on small screens
-        margin-top: 8px;
-      }
-    }
-
-    select {
-      width: 100%;
-      margin: 8px 0;
-    }
-
-    .user-details,
-    .user-records {
-      margin-bottom: 8px;
-    }
-
-    .user-records,
-    .user-details {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      margin: 8px 0;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .menu-icon {
-      font-size: 10px; // Adjust icon size for smaller screens
-    }
-
-    .search-bar {
-      mat-form-field {
-        margin: 0 0 4px 0; // Tighten the space around the input field
-      }
-
-      button {
-        height: 40px; // Adjust button size for better touch interaction
-      }
-    }
-
-    .logo img {
-      height: 25px; // Further reduce the logo size on very small screens
-    }
-
-    .user-details,
-    .user-records {
-      font-size: 10px; // Decrease font size for better fitting on small screens
-    }
-  }
-}
-
-
-
-
-
-
-
 // .header-container {
-//   background-color: #62b2da; // Primary theme color
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   background-color: var(--primary-color); // Primary theme color
 //   color: #fff;
 //   padding: 0.5rem 1rem;
 //   position: fixed;
 //   z-index: 1;
-
+// }
 //   .menu-icon {
 //     color: #fff;
 //     mat-icon {
-//       font-size: 24px;
+//       font-size: 4px;
 //     }
 //   }
 
 //   .logo img {
-//     height: 40px;
+//     height: 50px;
+//     border-radius: 100px;
 //   }
 
-//   .search-bar mat-form-field {
-//     width: 100%;
-//     height: 90%;
-//   }
-
-//   .search-bar input {
+//  .search-bar input {
 //     height: 90%;
 //     padding: 5px;
+
+//   .search-bar {
+//     display: flex;
+//     align-items: center;
+//     flex: 1;
+//     margin: 0 16px;
+
+    
+
+//     mat-form-field {
+//       flex: 1;
+//       margin-right: 8px;
+    
+
+//       input {
+//         color: #000;
+//         background-color:var(--primary-color);
+//         padding: 4px 8px;
+//         border-radius: 60px;
+//       }
+//     }
+
+//     button {
+//       height: 36px;
+//       min-width: 64px;
+      
+//     }
 //   }
 
-//   // .search-bar button {
-//   //   height: 90%;
-//   //   margin-left: 1rem;
-//   // }
 
 //   select {
 //     padding: 0.375rem 0.75rem;
 //     border-radius: 0.375rem;
 //     border: none;
-//     font-size: 18px;
+//     font-size: 16px;
 //   }
 
 //   label {
 //     margin-right: 0.5rem;
 //     color: #fff;
-//     font-size: 18px;
+//     font-size: 16px
 //   }
 
 //   .user-details mat-icon {
-//     font-size: 24px;
+//     font-size: 14px;
 //   }
 
 //   .row {
@@ -259,13 +83,6 @@
 //     text-align: center;
 //   }
 
-//   .search-bar {
-//     display: flex;
-//     flex: 1 1 auto;
-//     align-items: center;
-//     gap: 0.5rem;
-//   }
-
 //   .container-fluid {
 //     display: flex;
 //     flex-wrap: wrap;
@@ -276,6 +93,198 @@
 //     display: inline-block;
 //     vertical-align: middle;
 //     margin: 0.25rem;
+//     justify-content: center;
+
+//     .menu-icon {
+//       order: 1; // Move the menu icon to the top on mobile view
+//       margin: 8px 0;
+//     }
+
+//     .logo {
+//       order: 2; // Keep logo on top after the menu icon
+//       margin: 8px 0;
+//       flex: 1;
+//       justify-content: center;
+
+//       img {
+//         height: 30px; // Adjust the logo size for mobile
+//       }
+//     }
+//   }
+
+//   @media (max-width: 480px) {
+//     .menu-icon {
+//       font-size: 10px; // Adjust icon size for smaller screens
+//     }
+
+//     .search-bar {
+//       mat-form-field {
+//         margin: 0 0 4px 0; // Tighten the space around the input field
+//       }
+
+//       button {
+//         height: 40px; // Adjust button size for better touch interaction
+//       }
+//     }
+
+//     .logo img {
+//       height: 25px; // Further reduce the logo size on very small screens
+//     }
+
+//     .user-details {
+//       font-size: 10px; // Decrease font size for better fitting on small screens
+//     }
 //   }
 // }
 
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--primary-color); // Primary theme color
+  color: #fff;
+  padding: 0.5rem 1rem;
+  position: sticky;
+  width: 100%;
+  z-index: 1;
+
+  .logo img {
+    height: 50px;
+    // width: 5px;
+    border-radius: 100px;
+
+    @media (max-width: 480px) {
+      height: 35px; // Reduce logo size for smaller screens
+      width:70%;
+    }
+
+    @media (max-width: 327px) {
+      height: 25px; // Further reduce logo size
+      width:70%;
+    }
+  }
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    flex-grow: 0; // Do not let it grow unnecessarily
+    flex-shrink: 1; // Allow it to shrink dynamically
+    max-width: 200px; // Reduce maximum width
+    min-width: 50px; // Prevent it from becoming too small
+    margin: 0 8px; // Add some spacing
+
+    .search-input {
+      flex: 1; // Let the input adjust within its parent
+      padding: 6px 10px;
+      border: 2px solid #fff;
+      border-radius: 30px;
+      background-color: #fff;
+      color: #000;
+      font-size: 12px; // Smaller font size
+      outline: none;
+      transition: box-shadow 0.3s ease, width 0.3s ease;
+
+      &:focus {
+        box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+      }
+    }
+
+    .search-button {
+      margin-left: 8px;
+      background-color: transparent;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      mat-icon {
+        font-size: 16px; // Smaller icon size
+      }
+    }
+
+    // Responsive adjustments
+    @media (max-width: 768px) {
+      max-width: 200px; // Reduce width for medium screens
+    }
+
+    @media (max-width: 480px) {
+      max-width: 150px; // Reduce width for smaller screens
+      .search-input {
+        font-size: 10px;
+        padding: 0px;
+      }
+
+      .search-button {
+        mat-icon {
+          font-size: 14px;
+        }
+      }
+    }
+
+    @media (max-width: 328px) {
+      max-width: 120px; // Further reduce width for very small screens
+      flex-direction: row; // Keep elements side-by-side
+
+      .search-input {
+        font-size: 8px;
+        padding: 0px;
+      }
+
+      .search-button {
+        mat-icon {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .user-details {
+    mat-icon {
+      font-size: 24px;
+    }
+
+    @media (max-width: 480px) {
+      mat-icon {
+        font-size: 20px;
+      }
+    }
+
+    @media (max-width: 328px) {
+      mat-icon {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .theme-menu,
+  .font-menu {
+    mat-icon {
+      font-size: 24px;
+    }
+
+    @media (max-width: 480px) {
+      mat-icon {
+        font-size: 20px;
+      }
+    }
+
+    @media (max-width: 328px) {
+      mat-icon {
+        font-size: 16px;
+      }
+    }
+  }
+
+  @media (max-width: 328px) {
+    flex-wrap: wrap; // Allow wrapping for very small screens
+    justify-content: center;
+    text-align: center;
+
+    .logo {
+      margin-bottom: 8px; // Add spacing for stacked elements
+    }
+  }
+}
