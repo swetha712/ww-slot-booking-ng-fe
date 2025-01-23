@@ -4,9 +4,10 @@
     </div>
     <div class="card-container">
         <div *ngFor="let turf of filteredTurfs" class="card">
-            <img [src]="turf.image" alt="{{ turf.name }}" />
+            <img [src]="turf.image||turf.image1" alt="{{ turf.name }}" />
+            
             <div class="card-body">
-                <h3>{{ turf.name }}</h3>
+                <h3>{{ turf.turfname }}</h3>
                 <p>{{ turf.description }}</p>
                 <div class="card-actions">
                     <button class="card-button" [routerLink]="['/turfdetails', turf.id]">View Details</button>
