@@ -16,9 +16,13 @@
     </div>
   }@else{
   <!-- App Logo -->
-  <div class="logo">
-    <img src="https://cdn.produkto.io/66dee758ded95d25bd809de2/turf-masters.jpeg" alt="App Logo" />
-  </div>
+  <button class="logo" (click)="navigateTo('/home')">
+    <img
+      src="https://cdn.produkto.io/66dee758ded95d25bd809de2/turf-masters.jpeg"
+      alt="App Logo"
+    />
+  </button>
+  
 <!-- Search Bar -->
   <div class="search-bar">
     <button class="search-button" (click)="headerSearch.set(true)" >
@@ -53,7 +57,7 @@
     </mat-menu>
   </div>
 <!-- User Details -->
-  <button mat-icon-button class="user-details" (click)="navigateTo('/user-details')">
+  <button mat-icon-button class="user-details" (click)="navigateTo('/profile')">
     <mat-icon>account_circle</mat-icon>
   </button>
   }
