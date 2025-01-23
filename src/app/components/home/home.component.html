@@ -4,7 +4,7 @@
     </div>
     <div class="card-container">
         <div *ngFor="let turf of filteredTurfs" class="card">
-            <img [src]="turf.image" alt="{{ turf.name }}" />
+            <img [src]="turf.image1||turf.image" alt="{{ turf.name }}" />
             <div class="card-body">
                 <h3>{{ turf.name }}</h3>
                 <p>{{ turf.description }}</p>
