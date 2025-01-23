@@ -1,17 +1,27 @@
 <mat-toolbar class="header-container">
+  @if(headerSearch()){
+    <div class="col-12 w-100 remove">
+      <button type="button" class="close col-1 remove-icon" aria-label="Close" (click)="headerSearch.set(false)">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <input
+        type="text"
+        [(ngModel)]="searchQuery"
+        placeholder="Search Turf Name"
+        class="col-10 remove-input"
+      />
+      <button class="col-1 remove-search" (click)="handleButtonClick()">
+        <mat-icon fontIcon="search"></mat-icon>
+      </button>
+    </div>
+  }@else{
   <!-- App Logo -->
   <div class="logo">
     <img src="https://cdn.produkto.io/66dee758ded95d25bd809de2/turf-masters.jpeg" alt="App Logo" />
   </div>
 <!-- Search Bar -->
   <div class="search-bar">
-    <input
-      type="text"
-      [(ngModel)]="searchQuery"
-      placeholder="Search Turf Name"
-      class="search-input"
-    />
-    <button class="search-button" (click)="performSearch()">
+    <button class="search-button" (click)="headerSearch.set(true)" >
       <mat-icon fontIcon="search"></mat-icon>
     </button>
   </div>
@@ -46,4 +56,6 @@
   <button mat-icon-button class="user-details" (click)="navigateTo('/user-details')">
     <mat-icon>account_circle</mat-icon>
   </button>
+  }
+
 </mat-toolbar>

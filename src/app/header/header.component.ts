@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output, OnInit, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -36,7 +36,7 @@ export class HeaderComponent implements OnInit {
   currentFont: string = '';
   user!: any; // Tracks the currently applied font
   userId!: string;
-
+headerSearch=signal<boolean>(false);
   constructor(
     private themeService: ThemeService,
     private themeConflictService: ThemeConflictService,
@@ -63,6 +63,10 @@ export class HeaderComponent implements OnInit {
 
   navigateTo(route: string): void {
     this.router.navigate([route]);
+  }
+  handleButtonClick() {
+    this.performSearch();
+    this.headerSearch.set(false);
   }
 
 
